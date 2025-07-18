@@ -1,17 +1,16 @@
-# Cam Grinding 用户指南
+# EnveloGrinding 用户指南
 
-欢迎使用 **Cam Grinding 凸轮加工软件平台**用户指南！本指南旨在帮助您全面了解并掌握 **Cam Grinding** 的功能，为凸轮加工提供高效、精准的支持。
+欢迎使用 **EnveloGrinding 包络蜗杆磨削软件**用户指南！本指南旨在帮助您全面了解并掌握 **EnveloGrinding** 的功能，为包络蜗杆加工提供高效、精准的支持。
 
 ## 概述
 
-**Cam Grinding** 是一款专为凸轮加工设计的专业软件，集成了以下核心功能：
-- **凸轮加工代码生成**：支持多种设备和格式的加工代码自动生成。
-- **凸轮 CAD 绘制**：提供直观、精确的凸轮设计与建模工具。
-- **误差补偿**：内置多种算法，优化加工结果。
-- **凸轮曲线分析**：深度分析曲线特性，辅助设计与校正。
-- **其他工具**：包含 DXF 文件处理等实用功能。
+**EnveloGrinding** 是一款专为包络蜗杆加工设计的专业软件，集成了以下核心功能：
+- **加工代码生成**：配置工件数据/基础几何位置数据后自动生成CNC加工代码。
+- **齿型 CAD 绘制**：输入砂轮修型参数自动输出 DXF 格式齿型图形。同时支持点位文件形式的数据绘制。
+- **轴向截面计算**：虚拟蜗杆滚道螺旋线形态，绘制蜗杆轴向截面轨迹，可用于和实际测绘数据比对分析。
+- **测绘数据分析**：测绘蜗杆轴向截面数据自动绘制成 CAD 格式文件。和软件绘制的理论数据进行比对分析。
 
-无论您是初学者还是经验丰富的用户，**Cam Grinding** 都能帮助您简化工作流程，提高加工精度。
+无论您是初学者还是经验丰富的用户，**EnveloGrinding** 都能帮助您简化工作流程，提高加工精度。
 
 ## 目录结构
 
@@ -21,13 +20,11 @@
 
 2. [代码生成](genaration/README.md): 学习如何根据参数生成加工代码，并导出适配不同设备的文件。
 
-3. [凸轮绘制](cam_drawing/README.md): 掌握 CAD 绘图功能，用于凸轮设计与可视化。
+3. [齿型绘制](eg_drawing/README.md): 掌握 CAD 绘图功能，用于砂轮修整齿型绘制和轴向截面计算。
 
-4. [曲线分析](cam_analysis/README.md): 了解如何分析曲线数据，进行优化与评估。
+4. [截面计算](eg_calc/README.md): 了解如何根据蜗杆参数模拟工件轴向截面曲线图形。
 
-5. [误差补偿](deviation/README.md): 探索误差补偿工具，最大限度提升加工精度。
-
-6. [其他工具](dxf_tools/README.md): 介绍软件附带的实用工具，如 DXF 文件处理等。
+5. [数据分析](eg_analysis/README.md): 使用标准件/实际加工工件的测绘数据输出 CAD 图形，并和模拟计算曲线进行比较。
 
 7. [故障排除](troubleshooting/README.md): 提供常见问题解决方案，帮助您快速排除障碍。
 
@@ -44,20 +41,20 @@
 如需帮助，请参考以下资源：
 
 1. **官方网站**  
-   访问官方网站：[https://cg.niekun.net/](https://cg.niekun.net/)
+   访问官方网站：[https://eg.niekun.net/](https://eg.niekun.net/)
 
 2. **在线文档**  
-   浏览完整的在线用户文档：[https://cg-manual.niekun.net/](https://cg-manual.niekun.net/)
+   浏览完整的在线用户文档：[https://eg-manual.niekun.net/](https://eg-manual.niekun.net/)
 
 3. **常见问题 (FAQ)**  
-   查看常见问题解答：[https://cg-manual.niekun.net/troubleshooting](https://cg-manual.niekun.net/troubleshooting)
+   查看常见问题解答：[https://eg-manual.niekun.net/troubleshooting](https://eg-manual.niekun.net/troubleshooting)
 
 4. **技术支持**  
    如遇技术问题，请联系支持团队：  
-   **邮箱**：[camgrinding@niekun.net](mailto:camgrinding@niekun.net)
+   **邮箱**：[envelogrinding@niekun.net](mailto:envelogrinding@niekun.net)
 
 ## 反馈与建议
 
 我们非常重视您的意见和建议。如果您对软件有任何改进建议，欢迎通过技术支持邮箱联系我们。
 
-感谢您选择 **Cam Grinding**，祝您使用愉快！
+感谢您选择 **EnveloGrinding**，祝您使用愉快！
