@@ -3,7 +3,7 @@
 <html lang="zh-hans" >
     <head>
         <meta charset="UTF-8">
-        <title>XY 点位文件 · EnveloGrinding User Guide</title>
+        <title>轴向截面计算 · EnveloGrinding User Guide</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="HonKit 6.0.3">
@@ -50,10 +50,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="../eg_calc/" />
+    <link rel="next" href="../eg_analysis/" />
     
     
-    <link rel="prev" href="trapezoid.html" />
+    <link rel="prev" href="./" />
     
 
     </head>
@@ -211,9 +211,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4" data-path="./">
+        <li class="chapter " data-level="1.4" data-path="../eg_drawing/">
             
-                <a href="./">
+                <a href="../eg_drawing/">
             
                     
                     齿型绘制
@@ -225,9 +225,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.4.1" data-path="trapezoid.html">
+        <li class="chapter " data-level="1.4.1" data-path="../eg_drawing/trapezoid.html">
             
-                <a href="trapezoid.html">
+                <a href="../eg_drawing/trapezoid.html">
             
                     
                     梯形
@@ -238,9 +238,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.4.2" data-path="xypoints.html">
+        <li class="chapter " data-level="1.4.2" data-path="../eg_drawing/xypoints.html">
             
-                <a href="xypoints.html">
+                <a href="../eg_drawing/xypoints.html">
             
                     
                     XY 点位文件
@@ -256,9 +256,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5" data-path="../eg_calc/">
+        <li class="chapter " data-level="1.5" data-path="./">
             
-                <a href="../eg_calc/">
+                <a href="./">
             
                     
                     截面计算
@@ -270,9 +270,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.5.1" data-path="../eg_calc/axial_cut.html">
+        <li class="chapter active" data-level="1.5.1" data-path="axial_cut.html">
             
-                <a href="../eg_calc/axial_cut.html">
+                <a href="axial_cut.html">
             
                     
                     轴向截面计算
@@ -363,7 +363,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >XY 点位文件</a>
+        <a href=".." >轴向截面计算</a>
     </h1>
 </div>
 
@@ -378,51 +378,111 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="xy-点位文件">XY 点位文件</h1>
-<p>使用此工具将任何XY点位格式的数据转换为 DXF 文件，需要提前准备好包含 XY 形式坐标点的点位文件。</p>
-<h2 id="xy-点位数据地址">XY 点位数据地址</h2>
-<p>此处输入 TXT 格式的点位文件地址。如果是蜗杆轴向截面轮廓数据，则必须包含每个齿槽完整的点位信息，且坐标点间距越小生成的曲线精度越高。</p>
-<p>点位数据最简单的形式为：</p>
-<pre><code>15.0000  0.0000
-14.8781  -0.3763
-14.7518  -0.7512
-14.6211  -1.1245
-14.4860  -1.4963
-14.3465  -1.8664
-14.2026  -2.2349
-14.0544  -2.6016
-13.9018  -2.9666
-13.7450  -3.3297
-13.5839  -3.6909
-13.4185  -4.0503
-13.2489  -4.4076
-13.0751  -4.7629
-...
-</code></pre><p><strong>EnveloGrinding</strong> 会自动判断每一行是否包含坐标点数据，如果没有则会自动忽略此行。</p>
-<h2 id="xy-数据索引号">XY 数据索引号</h2>
-<p>对于每一行的数据，可以自定义具体哪一个数据分别属于 X 和 Y 轴。默认值为 <code>01</code> 表示每行的第一个数据为 X 轴，第二个数据为 Y 轴。</p>
-<p>对于以下数据，设置为 <code>56</code> 表示第六个数据为 X 轴，第七个数据为 Y 轴，且会自动跳过前几行不包含有效数据的行：</p>
-<pre><code>========================================================
-this is a test
-========================================================
-0.0000,0.0000,0.00000,0.0000,99.0800,-64.1672,-75.4945,148.5000,-100.1537,109.6426
-1.0000,3.6884,0.00310,0.0001,99.0802,-62.8400,-76.6030,148.4998,-102.0518,107.8778
-2.0000,7.2052,0.01220,0.0008,99.0818,-61.4944,-77.6894,148.4983,-103.9176,106.0796
-3.0000,10.5532,0.02702,0.0026,99.0859,-60.1314,-78.7543,148.4943,-105.7495,104.2477
-4.0000,13.7350,0.04728,0.0061,99.0938,-58.7519,-79.7985,148.4866,-107.5458,102.3825
-5.0000,16.7532,0.07271,0.0118,99.1067,-57.3568,-80.8228,148.4741,-109.3048,100.4840
-6.0000,19.6107,0.10304,0.0202,99.1256,-55.9469,-81.8280,148.4558,-111.0249,98.5526
-7.0000,22.3099,0.13799,0.0316,99.1515,-54.5227,-82.8148,148.4307,-112.7044,96.5887
-...
-</code></pre><h2 id="交换-xy-数据">交换 XY 数据</h2>
-<p>可以设置是否交换 X 和 Y 轴的数据，默认为不交换。</p>
-<p>此功能也可以通过交换 XY 数据索引号来实现。</p>
-<h2 id="比例系数">比例系数</h2>
-<p>定义 X 轴和 Y 轴的比例系数，默认值为 1。可以用来将原始数据进行镜像操作或比例缩放。</p>
-<h2 id="dxf-保存地址">DXF 保存地址</h2>
-<p>定义输出绘制完成的曲线文件路径。</p>
+                                <h1 id="工件轴向截面计算">工件轴向截面计算</h1>
+<p>本功能模块用于计算和生成包络蜗杆在轴向平面上的理论截面轮廓。该轮廓是检验蜗杆齿形是否正确的关键依据，并可用于生成检验模板或进行加工仿真。</p>
 <hr></hr>
-<p>此工具主要用于将测绘的蜗杆轴向截面轮廓数据转换为 DXF 文件，以便于在CAD中绘制曲线，以便于和软件绘制的理论数据进行比对分析。</p>
+<h3 id="输入参数">输入参数</h3>
+<p>以下参数是计算蜗杆轴向截面所必需的几何和工艺条件。</p>
+<h4 id="1-中心距-center-distance">1. 中心距 (Center Distance)</h4>
+<ul>
+<li><strong>定义</strong>: 蜗杆轴线与配对的蜗轮轴线之间的最短垂直距离。</li>
+<li><strong>单位</strong>: 毫米 (mm)。</li>
+<li><strong>解释</strong>: 这是决定蜗杆蜗轮副基本尺寸和安装位置的核心参数。</li>
+<li><strong>示例值</strong>: <code>109.3</code></li>
+</ul>
+<h4 id="2-蜗杆喉部直径-worm-throat-diameter">2. 蜗杆喉部直径 (Worm Throat Diameter)</h4>
+<ul>
+<li><strong>定义</strong>: 包络蜗杆的最小直径，位于其中间凹陷的“喉部”。</li>
+<li><strong>单位</strong>: 毫米 (mm)。</li>
+<li><strong>解释</strong>: 这是定义蜗杆基本形状和尺寸的关键参数。</li>
+<li><strong>示例值</strong>: <code>37.0</code></li>
+</ul>
+<h4 id="3-蜗轮齿数-worm-wheel-teeth-number">3. 蜗轮齿数 (Worm Wheel Teeth Number)</h4>
+<ul>
+<li><strong>定义</strong>: 与该蜗杆配对啮合的蜗轮的齿数。</li>
+<li><strong>单位</strong>: 整数。</li>
+<li><strong>解释</strong>: 蜗轮齿数影响传动比和蜗杆齿形的包络形成过程。</li>
+<li><strong>示例值</strong>: <code>60</code></li>
+</ul>
+<h4 id="4-砂轮安装倾角-grinding-wheel-installation-tilt-angle">4. 砂轮安装倾角 (Grinding Wheel Installation Tilt Angle)</h4>
+<ul>
+<li><strong>定义</strong>: 砂轮在机床上的安装倾斜角度。</li>
+<li><strong>单位</strong>: 度 (°)。</li>
+<li><strong>解释</strong>: 为了正确地磨削出包络蜗杆的特殊齿形（环面形状），砂轮需要以特定的角度倾斜安装。这个角度是保证成形精度的关键，错误的设置会导致齿形偏差。</li>
+<li><strong>示例值</strong>: <code>7.0</code></li>
+</ul>
+<h4 id="5-砂轮直径-grinding-wheel-diameter">5. 砂轮直径 (Grinding Wheel Diameter)</h4>
+<ul>
+<li><strong>定义</strong>: 用于磨削加工的砂轮的当前直径。</li>
+<li><strong>单位</strong>: 毫米 (mm)。</li>
+<li><strong>解释</strong>: 软件需要精确的砂轮直径来模拟其表面与工件的接触线，从而计算出正确的截面形状。</li>
+<li><strong>示例值</strong>: <code>500.0</code></li>
+</ul>
+<h4 id="6-砂轮分度圆齿顶高-grinding-wheel-indexing-circle-addendum">6. 砂轮分度圆齿顶高 (Grinding Wheel Indexing Circle Addendum)</h4>
+<ul>
+<li><strong>定义</strong>: 此参数定义了成形砂轮从其理论分度圆到齿顶（最外边缘）的径向高度。</li>
+<li><strong>解释</strong>: 这是在“高级参数”中也出现过的参数，用于精确描述成形砂轮的几何轮廓。此数据需要和<code>绘图工具 - 梯形</code>工具中生成齿型时输入的齿顶高一致。</li>
+<li><strong>示例值</strong>: <code>2.33</code></li>
+</ul>
+<h4 id="7-蜗杆计算齿数-worm-calculation-teeth-number">7. 蜗杆计算齿数 (Worm Calculation Teeth Number)</h4>
+<ul>
+<li><strong>定义</strong>: 模拟计算蜗杆的齿数。</li>
+<li><strong>单位</strong>: 整数。</li>
+<li><strong>解释</strong>: 蜗杆齿越靠两侧越容易产生误差，计算的齿数越多可以更好的对工件进行数据分析。但过多的计算齿数会导致计算时间变长。</li>
+<li><strong>示例值</strong>: <code>7</code>。</li>
+</ul>
+<h4 id="8-齿型文件地址-tooth-profile-file-address">8. 齿型文件地址 (Tooth Profile File Address)</h4>
+<ul>
+<li><strong>定义</strong>: 输入一个定义了砂轮截面形状的DXF文件路径。</li>
+<li><strong>解释</strong>: 此处引用的DXF文件（例如上一部分生成的<code>tixing-20.dxf</code>）定义了砂轮的轴向齿形。软件将使用这个齿形作为“刀具”，来计算它在工件上“切削”出的形状。</li>
+</ul>
+<h4 id="9-保存文件-save-file">9. 保存文件 (Save File)</h4>
+<ul>
+<li><strong>定义</strong>: 为计算后生成的工件轴向截面曲线指定保存路径和文件名。</li>
+<li><strong>解释</strong>: 计算结果将作为一个新的DXF文件被保存在此路径下，可用于后续的分析或制图。</li>
+</ul>
+<hr></hr>
+<h3 id="操作按钮">操作按钮</h3>
+<h4 id="1-生成工件截面曲线-generate-workpiece-section-curve">1. 生成工件截面曲线 (Generate Workpiece Section Curve)</h4>
+<ul>
+<li><strong>操作</strong>: 这是一个执行计算并生成图形文件的按钮。</li>
+<li><strong>解释</strong>: 当所有参数设置完毕后，点击此按钮，软件将：<ol>
+<li>读取“齿型文件地址”中的砂轮轮廓。</li>
+<li>基于中心距、倾角等所有几何和工艺参数，模拟砂轮的磨削运动。</li>
+<li>计算出在蜗杆轴向截面上形成的最终齿廓曲线。</li>
+<li>将该曲线保存为DXF文件到“保存文件”指定的路径。</li>
+<li>同时会输出蜗杆分度圆上的滚道曲线三维形态图形，用于辅助分析。</li>
+</ol>
+</li>
+</ul>
+<p><img src="resources/calc.jpg" alt="img"></img></p>
+<h4 id="2-计算工件数据-calculate-workpiece-data">2. 计算工件数据 (Calculate Workpiece Data)</h4>
+<ul>
+<li><strong>操作</strong>: 这是一个执行数据计算的按钮。</li>
+<li><strong>解释</strong>: 点击此按钮可能不会生成DXF文件，而是会在显示一系列关于工件截面的关键几何数据，例如：<pre><code>输入数据:
+  a   蜗轮蜗杆中心距: 109.3000
+  d1  蜗杆分度圆直径: 37.0000 (0.33a ~ 0.38a)
+  z2  蜗轮齿数      : 60
+  z1  蜗杆头数      : 1
+计算数据:
+  i   传动比              : 60.0 (z2 / z1)
+  d2  蜗轮分度圆直径      : 181.6000 (2a - d1)
+  mt  涡轮端面模数        : 3.0267 (d2 / z2)
+  ha  蜗杆齿顶高          : 2.1187 (0.7 * mt)
+  hf  蜗杆齿根高          : 2.7240 (0.9 * mt)
+  h   蜗杆全齿高          : 4.8427 (1.6 * mt)
+  c   齿顶间隙            : 0.6053 (0.2 * mt)
+  r   蜗杆喉部分度圆导程角: 4.6765 (atan(d2 / (i * d1)))
+  t   齿距角              : 6.0000 (360 / z2)
+  db  主基圆直径          : 54.6500 - 73.2310 (0.5a ~ 0.67a)
+  α  涡轮分度圆压力角    : 17.5138 - 23.7818 (asin(db / d2))
+  pt  涡轮分度圆齿距      : 9.5086 (pi * mt)
+  s2  涡轮分度圆齿厚      : 5.2297 (0.55 * pt)   |   4.7543 (0.50 * pt)
+  s1  蜗杆分度圆齿厚      : 4.2788   |   4.7543  |   (pt - s2) (不考虑圆周齿侧间隙)
+  sn2 涡轮分度圆法向齿厚  : 5.2123   |   4.7384  |   (s2 * cos(r))
+  sn1 蜗杆分度圆法向齿厚  : 4.2646   |   4.7384  |   (s1 * cos(r))
+</code></pre></li>
+</ul>
 
                                 
                                 </section>
@@ -450,12 +510,12 @@ this is a test
 
             
                 
-                <a href="trapezoid.html" class="navigation navigation-prev " aria-label="Previous page: 梯形">
+                <a href="./" class="navigation navigation-prev " aria-label="Previous page: 截面计算">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="../eg_calc/" class="navigation navigation-next " aria-label="Next page: 截面计算">
+                <a href="../eg_analysis/" class="navigation navigation-next " aria-label="Next page: 数据分析">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -466,7 +526,7 @@ this is a test
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"XY 点位文件","level":"1.4.2","depth":2,"next":{"title":"截面计算","level":"1.5","depth":1,"path":"eg_calc/README.md","ref":"eg_calc/README.md","articles":[{"title":"轴向截面计算","level":"1.5.1","depth":2,"path":"eg_calc/axial_cut.md","ref":"eg_calc/axial_cut.md","articles":[]}]},"previous":{"title":"梯形","level":"1.4.1","depth":2,"path":"eg_drawing/trapezoid.md","ref":"eg_drawing/trapezoid.md","articles":[]},"dir":"ltr"},"config":{"plugins":["theme-default"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css"},"pluginsConfig":{"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2}},"theme":"default","author":"Nie Kun","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"EnveloGrinding User Guide","language":"zh-hans","gitbook":"*","description":"EnveloGrinding 软件完整用户指南"},"file":{"path":"eg_drawing/xypoints.md","mtime":"2025-07-21T08:09:45.040Z","type":"markdown"},"gitbook":{"version":"6.0.3","time":"2025-07-21T08:09:53.556Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"轴向截面计算","level":"1.5.1","depth":2,"next":{"title":"数据分析","level":"1.6","depth":1,"path":"eg_analysis/README.md","ref":"eg_analysis/README.md","articles":[{"title":"文件对比","level":"1.6.1","depth":2,"path":"eg_analysis/dxf_compare.md","ref":"eg_analysis/dxf_compare.md","articles":[]}]},"previous":{"title":"截面计算","level":"1.5","depth":1,"path":"eg_calc/README.md","ref":"eg_calc/README.md","articles":[{"title":"轴向截面计算","level":"1.5.1","depth":2,"path":"eg_calc/axial_cut.md","ref":"eg_calc/axial_cut.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["theme-default"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css"},"pluginsConfig":{"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2}},"theme":"default","author":"Nie Kun","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"EnveloGrinding User Guide","language":"zh-hans","gitbook":"*","description":"EnveloGrinding 软件完整用户指南"},"file":{"path":"eg_calc/axial_cut.md","mtime":"2025-07-21T08:09:45.038Z","type":"markdown"},"gitbook":{"version":"6.0.3","time":"2025-07-21T08:09:53.556Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
