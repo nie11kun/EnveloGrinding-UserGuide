@@ -378,69 +378,57 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="cam-数据文件">CAM 数据文件</h1>
-<p>使用此工具生成凸轮曲线文件，需要提供已知的凸轮升程数据、基圆半径及滚子直径等信息。</p>
-<p>标准的 CAM 数据文件格式如下：</p>
-<pre><code>B,20 #基圆半径
-G,5 #测杆滚轮半径 如果是平面随动件则可以近似设置一个10倍基圆半径的滚子
-
-A,0,90,10 #角度范围及角度步距
-0.0 #每个角度下的升程
-0.1
-0.2
-0.3
-0.4
-0.5
-0.6
-0.7
-0.8
-0.9
-
-A,100,180,10
-1.0 #定义一个升程表示这一段角度范围都是同一个升程 此处会被识别为基圆所在位置
-
-A,190,350,10
-0.9
-0.8
-0.7
-0.6
-0.5
-0.4
-0.3
-0.2
-0.1
-0
-0
-0
-0
-</code></pre><ul>
-<li><code>B</code> 标识符指定基圆半径大小。</li>
-<li><code>G</code> 标识符指定测杆滚轮半径大小，如果升程数据是凸轮曲线数据，则滚子半径设置为 0 即可。如果是<strong>平面随动件</strong>的数据则可以近似设置一个10倍基圆半径的滚子半径即可得到凸轮曲线。</li>
-<li><code>A</code> 标识符指定了一个角度范围，后面的两位数字分别是起始角度和结束角度，最后一位数字是角度步距，即每隔多少度定义一个升程数据。</li>
-</ul>
-<p><code>A</code> 标识下需要逐行定义此角度范围下每个间隔的升程数据，如果只写一行标识这一角度范围内升程一致。</p>
-<h2 id="cam-数据文件地址">CAM 数据文件地址</h2>
-<p>输入按照以上标准格式保存的文件路径。</p>
-<h2 id="数据角度方向">数据角度方向</h2>
-<p>以 X 轴正向坐标轴为基准，指定数据文件中的角度是按照顺时针还是逆时针定义。</p>
-<h2 id="数据类型">数据类型</h2>
+                                <h1 id="梯形">梯形</h1>
+<p>本工具用于定义一个梯形（Trapezoidal）齿廓的几何尺寸，并依据这些参数生成一个DXF（Drawing Exchange Format）格式的图形文件。</p>
+<p><img src="resources/pic1.jpg" alt="img"></img></p>
+<hr></hr>
+<h3 id="1-中径宽-pitch-width">1. 中径宽 (Pitch Width)</h3>
 <ul>
-<li>绝对值：文件中的升程数据是绝对数据，会直接和基圆半径进行叠加计算得到凸轮曲线。</li>
-<li>相对值：文件中的生成数据是相对数据，首先会找出数据中的最小值并将所有数据平移使得最小值为0，然后在和基圆半径进行叠加计算得到凸轮曲线。</li>
+<li><strong>定义</strong>: 指在齿高中点（即中径线）位置测量的单个轮齿的宽度。</li>
+<li><strong>单位</strong>: 毫米 (mm)。</li>
+<li><strong>解释</strong>: 这是决定齿厚的基本参数。它与齿槽的宽度共同构成了齿距。</li>
+<li><strong>示例值</strong>: <code>4.7666</code></li>
 </ul>
-<h2 id="图形旋转角度">图形旋转角度</h2>
-<p>可以将绘制的凸轮图形进行旋转操作，默认为 0 度，即不旋转。</p>
-<p>输入正值为顺时针旋转，输入负值为逆时针旋转，单位为角度。</p>
-<h2 id="绘制升程图形">绘制升程图形</h2>
-<p>同 <code>XY 点位文件</code> 工具介绍。</p>
-<h2 id="基圆半径">基圆半径</h2>
-<p>同 <code>XY 点位文件</code> 工具介绍。</p>
-<h2 id="升程方向">升程方向</h2>
-<p>同 <code>XY 点位文件</code> 工具介绍。</p>
-<h2 id="x-轴缩放">X 轴缩放</h2>
-<p>同 <code>XY 点位文件</code> 工具介绍。</p>
-<h2 id="dxf-保存地址">DXF 保存地址</h2>
-<p>同 <code>XY 点位文件</code> 工具介绍。</p>
+<h3 id="2-中径齿顶高-pitch-addendum">2. 中径齿顶高 (Pitch Addendum)</h3>
+<ul>
+<li><strong>定义</strong>: 从中径线到齿顶（轮齿最高点）的径向距离。</li>
+<li><strong>单位</strong>: 毫米 (mm)。</li>
+<li><strong>解释</strong>: 该参数定义了轮齿超出中径线的高度部分。它与下面的“中径齿底高”共同决定了总齿高。</li>
+<li><strong>示例值</strong>: <code>2.33</code></li>
+</ul>
+<h3 id="3-中径齿底高-pitch-dedendum">3. 中径齿底高 (Pitch Dedendum)</h3>
+<ul>
+<li><strong>定义</strong>: 从中径线到齿根（轮齿最底部）的径向距离。</li>
+<li><strong>单位</strong>: 毫米 (mm)。</li>
+<li><strong>解释</strong>: 该参数定义了轮齿低于中径线的高度部分。通常，齿底高会略大于齿顶高，为配对齿轮的齿顶留出间隙。</li>
+<li><strong>示例值</strong>: <code>3.0</code></li>
+</ul>
+<h3 id="4-齿型右半角-tooth-profile-right-half-angle">4. 齿型右半角 (Tooth Profile Right Half Angle)</h3>
+<ul>
+<li><strong>定义</strong>: 梯形齿廓右侧齿壁与齿高中垂线之间的夹角。</li>
+<li><strong>单位</strong>: 度 (°)。</li>
+<li><strong>解释</strong>: 这个角度定义了齿壁的倾斜程度。对于标准的对称梯形齿，左右半角是相等的。这个角度与压力角相关。</li>
+<li><strong>示例值</strong>: <code>20.0</code></li>
+</ul>
+<h3 id="5-齿型左半角-tooth-profile-left-half-angle">5. 齿型左半角 (Tooth Profile Left Half Angle)</h3>
+<ul>
+<li><strong>定义</strong>: 梯形齿廓左侧齿壁与齿高中垂线之间的夹角。</li>
+<li><strong>单位</strong>: 度 (°)。</li>
+<li><strong>解释</strong>: 定义了左侧齿壁的倾斜程度。如果需要一个非对称的齿型，可以将此角度设置为与右半角不同的值。</li>
+<li><strong>示例值</strong>: <code>20.0</code></li>
+</ul>
+<p><em>注意: 两个角度值右侧的绿色输入框是用于输入公差或补偿值。</em></p>
+<h3 id="6-保存文件-save-file">6. 保存文件 (Save File)</h3>
+<ul>
+<li><strong>定义</strong>: 指定生成的DXF文件的完整保存路径和文件名。</li>
+<li><strong>解释</strong>: 点击“选择文件”按钮可以浏览并选择一个保存位置。软件将把根据上述参数绘制的梯形齿廓图形保存为<code>.dxf</code>文件。</li>
+</ul>
+<hr></hr>
+<h3 id="生成齿形文件-generate-profile-file">生成齿形文件 (Generate Profile File)</h3>
+<ul>
+<li><strong>操作</strong>: 这是一个执行按钮。</li>
+<li><strong>解释</strong>: 在设置好所有几何参数并指定了保存路径后，点击此按钮，软件将执行计算并生成DXF文件。</li>
+</ul>
 
                                 
                                 </section>
@@ -484,7 +472,7 @@ A,190,350,10
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"梯形","level":"1.4.1","depth":2,"next":{"title":"XY 点位文件","level":"1.4.2","depth":2,"path":"eg_drawing/xypoints.md","ref":"eg_drawing/xypoints.md","articles":[]},"previous":{"title":"齿型绘制","level":"1.4","depth":1,"path":"eg_drawing/README.md","ref":"eg_drawing/README.md","articles":[{"title":"梯形","level":"1.4.1","depth":2,"path":"eg_drawing/trapezoid.md","ref":"eg_drawing/trapezoid.md","articles":[]},{"title":"XY 点位文件","level":"1.4.2","depth":2,"path":"eg_drawing/xypoints.md","ref":"eg_drawing/xypoints.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["theme-default"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css"},"pluginsConfig":{"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2}},"theme":"default","author":"Nie Kun","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"EnveloGrinding User Guide","language":"zh-hans","gitbook":"*","description":"EnveloGrinding 软件完整用户指南"},"file":{"path":"eg_drawing/trapezoid.md","mtime":"2025-07-21T07:12:01.968Z","type":"markdown"},"gitbook":{"version":"6.0.3","time":"2025-07-21T07:12:09.557Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"梯形","level":"1.4.1","depth":2,"next":{"title":"XY 点位文件","level":"1.4.2","depth":2,"path":"eg_drawing/xypoints.md","ref":"eg_drawing/xypoints.md","articles":[]},"previous":{"title":"齿型绘制","level":"1.4","depth":1,"path":"eg_drawing/README.md","ref":"eg_drawing/README.md","articles":[{"title":"梯形","level":"1.4.1","depth":2,"path":"eg_drawing/trapezoid.md","ref":"eg_drawing/trapezoid.md","articles":[]},{"title":"XY 点位文件","level":"1.4.2","depth":2,"path":"eg_drawing/xypoints.md","ref":"eg_drawing/xypoints.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["theme-default"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css"},"pluginsConfig":{"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2}},"theme":"default","author":"Nie Kun","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"EnveloGrinding User Guide","language":"zh-hans","gitbook":"*","description":"EnveloGrinding 软件完整用户指南"},"file":{"path":"eg_drawing/trapezoid.md","mtime":"2025-07-21T07:38:04.406Z","type":"markdown"},"gitbook":{"version":"6.0.3","time":"2025-07-21T07:38:13.056Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
