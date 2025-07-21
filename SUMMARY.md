@@ -13,7 +13,7 @@
     * [梯形](eg_drawing/trapezoid.md)
     * [XY 点位文件](eg_drawing/xypoints.md)
 * [截面计算](eg_calc/README.md)
-    * [轴向截面计算](cam_calc/axial_cut.md)
+    * [轴向截面计算](eg_calc/axial_cut.md)
 * [数据分析](eg_analysis/README.md)
     * [文件对比](eg_analysis/dxf_compare.md)
 * [故障排除](troubleshooting/README.md)

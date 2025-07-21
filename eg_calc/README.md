@@ -1,9 +1,5 @@
-# DXF 工具
+# 截面计算
 
-![img](resources/dxf_file.jpg)
+![img](resources/calc_helix.jpg)
 
-**Cam Grinding** 的大部分对于文件的操作都是基于 DXF 格式的，为了方便操作，**Cam Grinding** 内置了一系列 DXF 文件处理工具，包含以下功能：
-
-- **DXF 对比**：将多个 DXF 文件叠放在一起观察他们的区别。
-- **DXF 离散化**：将 DXF 文件转换为离散点化的 DXF 文件。
-- **DXF 拟合圆弧**：将离散点化的 DXF 文件转换为拟合圆弧的 DXF 文件。
+**EnveloGrinding** 可以通过输入工件参数和齿型文件，自动计算蜗杆轴向截面曲线图形。同时可以输出蜗杆三维滚道轨迹曲线。
