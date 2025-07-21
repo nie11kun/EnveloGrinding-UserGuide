@@ -379,52 +379,65 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="高级参数">高级参数</h1>
-<p>高级参数提供了更多的自定义选项，用户可根据实际需求调整这些参数，以优化加工效果并提升加工精度。</p>
-<h2 id="程序头信息">程序头信息</h2>
-<p>在生成的加工代码文件中，用户可以在程序头部添加自定义信息，例如该程序所对应的凸轮信息，如升程、基圆半径等，以便于后续的加工和管理。</p>
-<p>示例如下：</p>
-<p><img src="resources/prg_header.jpg" alt="程序头信息示例"></img></p>
-<p>实际加工代码中的效果如下：</p>
-<pre><code>;凸轮名称：389
-;基圆半径：42mm
-;升程：25mm
-;********************************
-;砂轮直径范围:396.3000 - 395.3000
-;砂轮步距:0.5
-;轨迹程序段数:106
-;********************************
-;软件版本:1.11.0
-;生成日期:2025-01-20 11:26:42
-;********************************
-...
-</code></pre><h2 id="dxf-读取精度">DXF 读取精度</h2>
-<p>DXF 读取精度参数用于设置凸轮 DXF 文件的离散精度，定义原始凸轮曲线离散化后相邻离散点之间的最大距离。设置值越小，对凸轮曲线的识别精度越高，建议设置为 0.005mm，即可满足大多数加工精度要求。</p>
-<h2 id="程序点数量">程序点数量</h2>
-<p>该参数定义生成加工代码时所使用的离散点数量，每个点均由 X、C 两个轴的坐标构成。点的数量越多，加工精度越高，但也会导致代码文件体积增大，程序运行速度降低。默认设置为 3600 个点，通常能够满足加工需求。</p>
-<p>示例如下：</p>
-<pre><code>X=0.0015 C=DC(0.3525)
-</code></pre><p>建议优先使用 <strong>圆弧拟合</strong> 方法以减少点数，提高执行效率。</p>
-<h2 id="拟合圆弧">拟合圆弧</h2>
-<p>圆弧拟合功能可显著减少代码行数，提高执行效率。启用此功能后，系统将使用最小二乘法算法对加工离散点进行圆弧拟合，从而优化加工轨迹。</p>
-<p>使用圆弧拟合功能时，需要机床开启 Transmit 坐标转换功能并设置相关系统参数。Siemens sinumerik 数控系统开启 Transmit 功能请参考 <a href="transmit.md">TRANSMIT</a>。</p>
-<p>启用后，生成的代码示例如下：</p>
-<pre><code>G02 X=247.2834 Y=-4.9551 CR=404.1318
-</code></pre><p>若机床的几何轴顺序与标准 XYZ 不一致，可能需要启用 G3/G2 反转选项。</p>
-<p>启用圆弧拟合功能后，输出文件目录将包含以下新增内容：</p>
-<pre><code>特定砂轮直径下加工运行轨迹
-├── 圆弧拟合后 DXF 文件
-├── 圆弧拟合后 HTML 文件
-├── 圆弧拟合后 TXT 文件
-</code></pre><p>其中 TXT 文件详细记录了每段圆弧的起点终点坐标/圆心坐标/圆弧半径等信息，便于后续的数据分析和优化。格式如下：</p>
-<pre><code>第 1 段 - 标准起点坐标: [247.3028, -0.0000], 标准终点坐标: [241.4712, -64.4415], 平滑起点坐标: [247.3145, 0.0000], 平滑终点坐标: [241.4568, -64.4388]
-          圆弧半径: 349.3673, 圆心坐标: [-102.0634, -0.8690], 圆弧相对圆心角度范围: [0.1425, -10.4842]
-第 2 段 - 标准起点坐标: [241.4420, -64.4361], 标准终点坐标: [224.9668, -121.3544], 平滑起点坐标: [241.4568, -64.4388], 平滑终点坐标: [224.9540, -121.3493]
-          圆弧半径: 299.4235, 圆心坐标: [-53.0011, -10.0519], 圆弧相对圆心角度范围: [349.5353, 338.1781]
-...
-</code></pre><h2 id="拟合误差">拟合误差</h2>
-<p>拟合误差参数用于控制圆弧拟合的精度。设置值越小，拟合结果越接近原始离散点曲线，精度越高，但同时会增加圆弧段的数量。通常情况下，建议将该参数设置为 1，以达到精度与效率的平衡。</p>
-<p>以下图形中，左侧是误差设置为 10 的拟合效果，右侧是误差设置为 1 的拟合效果：
-<img src="resources/fit_arc_compare.jpg" alt="img"></img></p>
+<p>本文档旨在解释“高级参数”选项卡中的各项参数。这些参数通常与CNC磨削中心的具体机床结构（运动学）和对刀设置相关，需要由熟悉机床操作的技术人员进行设置。错误的设置会导致严重的加工错误。</p>
+<hr></hr>
+<p><img src="resources/machine_base.png" alt="示例机床结构"></img></p>
+<h3 id="1-砂轮分度圆齿顶高-grinding-wheel-indexing-circle-addendum">1. 砂轮分度圆齿顶高 (Grinding Wheel Indexing Circle Addendum)</h3>
+<ul>
+<li><strong>定义</strong>: 此参数指砂轮齿型从其理论分度圆到齿顶（最外边缘）的高度。数值必须和蜗轮分度圆齿顶高度保持一致，这是一个关键的几何尺寸。</li>
+<li><strong>解释</strong>: 在复杂的成形磨削中，软件需要精确了解砂轮的轮廓尺寸以计算正确的接触点和避免干涉。此参数定义了砂轮工作轮廓的径向尺寸。</li>
+<li><strong>示例值</strong>: <code>3.4</code></li>
+</ul>
+<h3 id="2-b中心距砂轮中心x-distance-from-b-center-to-wheel-center-in-x">2. B中心距砂轮中心.X (Distance from B-Center to Wheel Center in X)</h3>
+<ul>
+<li><strong>定义</strong>: 机床B轴回转中心到砂轮主轴中心在X坐标轴方向上的距离。</li>
+<li><strong>解释</strong>: 这是一个描述机床几何结构的核心参数。B轴是控制砂轮摆动磨削的旋转轴。该参数精确定义了砂轮相对于B轴回转中心的位置，是进行四轴联动计算的基础。</li>
+<li><strong>示例值</strong>: <code>606.23</code></li>
+</ul>
+<h3 id="3-a中心距砂轮中心z-distance-from-a-center-to-wheel-center-in-z">3. A中心距砂轮中心.Z (Distance from A-Center to Wheel Center in Z)</h3>
+<ul>
+<li><strong>定义</strong>: 机床A轴回转中心到砂轮主轴中心在Z坐标轴方向上的距离。</li>
+<li><strong>解释</strong>: 与上一个参数类似，这描述了机床A轴回转轴中心与砂轮在Z方向上的相对位置。</li>
+<li><strong>示例值</strong>: <code>75.1328</code></li>
+</ul>
+<h3 id="4-b中心距a中心z-distance-from-b-center-to-a-center-in-z">4. B中心距A中心.Z (Distance from B-Center to A-Center in Z)</h3>
+<ul>
+<li><strong>定义</strong>: 机床B轴回转中心与A轴回转中心在Z坐标轴方向上的距离。</li>
+<li><strong>解释</strong>: 这个参数定义了机床两个关键回转中心之间的相对位置，是机床运动学模型的核心数据之一，直接影响所有联动计算的准确性。</li>
+<li><strong>示例值</strong>: <code>-1.145</code></li>
+</ul>
+<h3 id="5-a0时砂轮距工件中心y-wheel-to-workpiece-center-distance-in-y-at-a0">5. A0时砂轮距工件中心.Y (Wheel-to-Workpiece-Center Distance in Y at A=0)</h3>
+<ul>
+<li><strong>定义</strong>: 当A轴（指控制砂轮调整安装角的旋转轴）处于零度位置时，砂轮中心与工件回转中心在Y坐标轴方向上的偏移量。</li>
+<li><strong>解释</strong>: 这是一个重要的安装和校准参数。理想情况下，该值可能为0，但实际装配中总会存在微小误差。精确测量并在此处输入该偏移值，可以对机床的几何误差进行补偿，确保Y方向的加工精度。</li>
+<li><strong>示例值</strong>: <code>-0.0124</code></li>
+</ul>
+<h3 id="6-工件中点对刀基准x-workpiece-mid-point-tool-setting-datum---x">6. 工件中点对刀基准.X (Workpiece Mid-Point Tool Setting Datum - X)</h3>
+<ul>
+<li><strong>定义</strong>: 在进行对刀操作时，将刀具（砂轮）移动到工件理论中点位置时，机床X轴的坐标值。</li>
+<li><strong>解释</strong>: 这是设定工件坐标系（WCS）的基准值。操作员通过对刀仪或手动操作，找到工件的加工基准点，并将该点的机床坐标记录在此处。所有后续的加工路径都将基于此坐标原点进行计算。</li>
+<li><strong>示例值</strong>: <code>0.0</code></li>
+</ul>
+<h3 id="7-工件中点对刀基准z-workpiece-mid-point-tool-setting-datum---z">7. 工件中点对刀基准.Z (Workpiece Mid-Point Tool Setting Datum - Z)</h3>
+<ul>
+<li><strong>定义</strong>: 与上一条类似，这是工件中点对刀基准在机床Z轴的坐标值。</li>
+<li><strong>解释</strong>: 定义了工件坐标系原点的Z向位置。</li>
+<li><strong>示例值</strong>: <code>0.0</code></li>
+</ul>
+<h3 id="8-工件中点对刀基准b-workpiece-mid-point-tool-setting-datum---b">8. 工件中点对刀基准.B (Workpiece Mid-Point Tool Setting Datum - B)</h3>
+<ul>
+<li><strong>定义</strong>: 与上同理，这是工件中点对刀基准的机床B轴（旋转轴）的角度值。</li>
+<li><strong>解释</strong>: 定义了工件坐标系建立时B轴的旋转位置。</li>
+<li><strong>示例值</strong>: <code>0.0</code></li>
+</ul>
+<h3 id="9-工件中点对刀基准c-workpiece-mid-point-tool-setting-datum---c">9. 工件中点对刀基准.C (Workpiece Mid-Point Tool Setting Datum - C)</h3>
+<ul>
+<li><strong>定义</strong>: 与上同理，这是工件中点对刀基准的机床C轴（通常是工件主轴）的角度值。</li>
+<li><strong>解释</strong>: 定义了工件坐标系建立时C轴的起始旋转位置，对于蜗杆加工尤其重要，因为它决定了螺旋线的起始相位。</li>
+<li><strong>示例值</strong>: <code>350.0</code></li>
+</ul>
+<hr></hr>
+<p><em>注意: 每个参数右侧的绿色输入框是用于输入这些参数的测量补偿值或调整量。</em></p>
 
                                 
                                 </section>
@@ -468,7 +481,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"高级参数","level":"1.3.2","depth":2,"next":{"title":"其他参数","level":"1.3.3","depth":2,"path":"genaration/others.md","ref":"genaration/others.md","articles":[]},"previous":{"title":"基本参数","level":"1.3.1","depth":2,"path":"genaration/base.md","ref":"genaration/base.md","articles":[]},"dir":"ltr"},"config":{"plugins":["theme-default"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css"},"pluginsConfig":{"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2}},"theme":"default","author":"Nie Kun","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"EnveloGrinding User Guide","language":"zh-hans","gitbook":"*","description":"EnveloGrinding 软件完整用户指南"},"file":{"path":"genaration/advance.md","mtime":"2025-07-18T07:20:52.362Z","type":"markdown"},"gitbook":{"version":"6.0.3","time":"2025-07-18T07:20:59.588Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"高级参数","level":"1.3.2","depth":2,"next":{"title":"其他参数","level":"1.3.3","depth":2,"path":"genaration/others.md","ref":"genaration/others.md","articles":[]},"previous":{"title":"基本参数","level":"1.3.1","depth":2,"path":"genaration/base.md","ref":"genaration/base.md","articles":[]},"dir":"ltr"},"config":{"plugins":["theme-default"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css"},"pluginsConfig":{"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2}},"theme":"default","author":"Nie Kun","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"EnveloGrinding User Guide","language":"zh-hans","gitbook":"*","description":"EnveloGrinding 软件完整用户指南"},"file":{"path":"genaration/advance.md","mtime":"2025-07-21T07:12:01.969Z","type":"markdown"},"gitbook":{"version":"6.0.3","time":"2025-07-21T07:12:09.557Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

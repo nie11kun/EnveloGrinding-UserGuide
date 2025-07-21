@@ -379,38 +379,106 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="基本参数">基本参数</h1>
-<p>基本参数中包含最常用的设置项，包括砂轮直径/直径间隔/凸轮 DXF 文件，以及输出文件夹等。下面逐项介绍参数含义及设置方法。</p>
-<h2 id="最大砂轮直径">最大砂轮直径</h2>
-<p>机床 CNC 代码是通过控制砂轮架前后运动以及头架旋转运动实现凸轮的加工。实际上可以看作是控制砂轮轴中心点绕头架旋转运动。实际加工中是通过砂轮边沿和工件接触切削从而加工出凸轮轮廓。这其中涉及砂轮中心运动轨迹和砂轮边沿运动轨迹的区别，两者之间是以砂轮半径为宽度的轮廓线关系。因此，砂轮直径变化时砂轮中心运动轨迹也会变化，从而使得砂轮边沿运动轨迹符合凸轮设计曲线要求。</p>
-<p>每当砂轮直径变化时，需要重新计算一组新的加工代码以满足加工精度的要求。Cam Grinding 提供了最大砂轮直径和最小砂轮直径的设置，软件会在这个区间内生成合适的加工代码。</p>
-<p>根据实际安装的砂轮直径，设置 <code>最大砂轮直径</code> 参数，通常情况下，当前砂轮直径是多少，则最大砂轮直径就应设置为相同数值。请确保在机床中将砂轮实际直径与系统设置直径校准，否则实际加工可能会产生误差。</p>
-<p>例如，当凸轮直径误差为 3mm 时，实际加工可能会产生约 0.012mm 的曲线误差：
-<img src="resources/deviation.jpg" alt="凸轮直径误差示意图"></img></p>
-<h2 id="最小砂轮直径">最小砂轮直径</h2>
-<p>最小砂轮直径的设置值需要小于或等于最大砂轮直径。由于生成的加工代码会覆盖从最大砂轮直径到最小砂轮直径的范围，因此最小砂轮直径越小，生成的代码文件尺寸越大。通常情况下，应设置足够使用的直径范围即可。</p>
-<h2 id="砂轮直径误差修正">砂轮直径误差修正</h2>
-<p>最大砂轮直径右侧的绿色输入框用于<strong>系统设置的砂轮直径</strong>和<strong>实际砂轮直径</strong>存在误差时，修复砂轮直径误差所引起的凸轮曲线加工误差。例如，当前系统设置的砂轮直径为 400 mm，实际砂轮直径为 405 mm，那么砂轮直径误差修正的值应设置为 5 mm。</p>
-<h2 id="砂轮直径间隔">砂轮直径间隔</h2>
-<p>此参数决定了砂轮直径每变化多少 mm 时，重新计算一组新的加工代码。设置值越小，直径误差引起的曲线误差越小，但生成的代码文件尺寸也会增加。推荐设置为 0.5 mm。</p>
-<h2 id="凸轮-dxf-文件">凸轮 DXF 文件</h2>
-<p>此处需要提供用于加工的凸轮 DXF 图纸，该图形必须为凸轮的轮廓线。加工方向应以沿着 X 轴正向为起点，顺时针加工。</p>
-<p>典型的凸轮曲线示例：
-<img src="resources/cam_demo.jpg" alt="凸轮 DXF 示例"></img></p>
-<h2 id="输出程序路径">输出程序路径</h2>
-<p>此参数用于设置加工代码的输出文件夹，软件会自动在该文件夹下创建一个子文件夹，名称格式为 <code>CV_凸轮DXF文件</code>，例如：<code>CV_CAMTEST</code>。</p>
-<p>加工代码及相关输出文件将存放于该文件夹中，目录结构如下：</p>
-<pre><code>CV_文件名
-├── 凸轮加工代码
-├── 离散点化凸轮 DXF 文件
-├── 多段线化凸轮 DXF 文件
-├── 特定砂轮直径下加工运行轨迹
-│   ├── 离散点化 DXF 文件
-│   ├── 多段线化 DXF 文件
-│   ├── 实际运行离散点坐标信息 TXT 文件
-│   └── 凸轮曲线与加工运行曲线对比 HTML 文件
-</code></pre><p>其中特定砂轮直径下的数据，即最终机床所运行的加工代码执行的加工轨迹。</p>
+<p>基本参数界面主要涉及工件数据/砂轮数据/加工数据等。</p>
 <hr></hr>
-<p>将生成的凸轮加工代码复制到机床，即可进行加工。</p>
+<p><img src="resources/workpiece.png" alt="典型工件图纸"></img></p>
+<h3 id="1-中心距-center-distance">1. 中心距 (Center Distance)</h3>
+<ul>
+<li><strong>定义</strong>: 指蜗杆轴线与蜗轮轴线之间的最短垂直距离。</li>
+<li><strong>单位</strong>: 通常为毫米 (mm)。</li>
+<li><strong>解释</strong>: 这是蜗杆蜗轮传动设计中最基本的参数之一，它决定了传动装置的整体尺寸。在此处输入的数值应与设计图纸上的中心距严格一致。</li>
+<li><strong>示例值</strong>: <code>135.0</code></li>
+</ul>
+<h3 id="2-蜗杆喉部直径-worm-throat-diameter">2. 蜗杆喉部直径 (Worm Throat Diameter)</h3>
+<ul>
+<li><strong>定义</strong>: 包络蜗杆中间最细位置的直径，也称为蜗杆咽喉直径。</li>
+<li><strong>单位</strong>: 毫米 (mm)。</li>
+<li><strong>解释</strong>: 喉部直径是计算蜗杆其他几何尺寸（如齿高、齿宽等）的重要依据。该参数直接影响蜗杆的强度和与蜗轮的啮合性能。</li>
+<li><strong>示例值</strong>: <code>49.9</code></li>
+</ul>
+<h3 id="3-蜗轮齿数-worm-wheel-teeth-number">3. 蜗轮齿数 (Worm Wheel Teeth Number)</h3>
+<ul>
+<li><strong>定义</strong>: 与该蜗杆相啮合的蜗轮的牙齿数量。</li>
+<li><strong>单位</strong>: 整数。</li>
+<li><strong>解释</strong>: 蜗轮齿数与蜗杆头数（通常为1或2）共同决定了传动比。这个参数必须与配对的蜗轮设计参数完全一致。</li>
+<li><strong>示例值</strong>: <code>60</code></li>
+</ul>
+<h3 id="4-蜗杆旋向-worm-rotation-direction">4. 蜗杆旋向 (Worm Rotation Direction)</h3>
+<ul>
+<li><strong>定义</strong>: 蜗杆螺旋线的旋转方向。</li>
+<li><strong>选项</strong>: 右旋 (Right-hand) / 左旋 (Left-hand)。</li>
+<li><strong>解释</strong>: 从蜗杆的轴线方向看，如果螺旋线顺时针远离观察者，则为右旋；反之则为左旋。蜗杆的旋向必须与配对的蜗轮旋向相匹配，以确保正确的传动方向。</li>
+<li><strong>示例值</strong>: <code>右旋</code></li>
+</ul>
+<h3 id="5-蜗轮加工角度-worm-wheel-machining-angle">5. 蜗轮加工角度 (Worm Wheel Machining Angle)</h3>
+<ul>
+<li><strong>定义</strong>: 在生成加工程序时，用于计算刀具路径的一个关键角度，通常与蜗杆的长度和涡轮齿数相关。</li>
+<li><strong>单位</strong>: 度 (°)。</li>
+<li><strong>解释</strong>: 此参数指蜗杆和涡轮啮合部分的角度，也是砂轮实际在加工中摆动的角度范围。</li>
+<li><strong>示例值</strong>: <code>65.0</code></li>
+</ul>
+<p><img src="resources/pic1.jpg" alt="img"></img></p>
+<h3 id="6-砂轮安装倾角-grinding-wheel-installation-tilt-angle">6. 砂轮安装倾角 (Grinding Wheel Installation Tilt Angle)</h3>
+<ul>
+<li><strong>定义</strong>: 砂轮在机床上的安装倾斜角度。</li>
+<li><strong>单位</strong>: 度 (°)。</li>
+<li><strong>解释</strong>: 为了正确地磨削出包络蜗杆的特殊齿形（环面形状），砂轮需要以特定的角度倾斜安装。这个角度是保证成形精度的关键，错误的设置会导致齿形偏差。</li>
+<li><strong>示例值</strong>: <code>7.0</code></li>
+</ul>
+<blockquote>
+<p>此参数右侧为标准的<code>涡轮分度圆导程角</code>，部分工件按照设计可按照标准导程角加工蜗杆，打勾复选框可以自动将砂轮安装倾角赋值为标准导程角。</p>
+</blockquote>
+<h3 id="7-磨削总深度-total-grinding-depth">7. 磨削总深度 (Total Grinding Depth)</h3>
+<ul>
+<li><strong>定义</strong>: 从蜗杆毛坯表面开始，需要被磨削掉的总材料层厚度。</li>
+<li><strong>单位</strong>: 毫米 (mm)。</li>
+<li><strong>解释</strong>: 该值设定了总的加工余量。软件会根据这个深度和下面的“磨削步进”参数来计算总的加工层数。</li>
+<li><strong>示例值</strong>: <code>1.0</code></li>
+</ul>
+<blockquote>
+<p>此参数右侧为磨削深度调整量，如果需要将工件多磨或少磨一定深度，且需要保持当前齿型啮合状态，可以设置此处调整量。</p>
+</blockquote>
+<h3 id="8-磨削步进-grinding-step">8. 磨削步进 (Grinding Step)</h3>
+<ul>
+<li><strong>定义</strong>: 每一次磨削循环（或每一刀）的切削深度。</li>
+<li><strong>单位</strong>: 毫米 (mm)。</li>
+<li><strong>解释</strong>: 这是指单次进刀的深度。较小的步进可以获得更好的表面光洁度和更高的加工精度，但会增加加工时间。该值通常分为粗磨和精磨阶段，精磨的步进值更小。</li>
+<li><strong>示例值</strong>: <code>0.1</code></li>
+</ul>
+<h3 id="9-最大砂轮直径-maximum-grinding-wheel-diameter">9. 最大砂轮直径 (Maximum Grinding Wheel Diameter)</h3>
+<ul>
+<li><strong>定义</strong>: 加工过程中允许使用的砂轮的最大直径。</li>
+<li><strong>单位</strong>: 毫米 (mm)。</li>
+<li><strong>解释</strong>: 对应全新或刚修整过的砂轮直径。软件需要这个参数来精确计算砂轮表面点与工件的接触轨迹。</li>
+<li><strong>示例值</strong>: <code>420.0</code></li>
+</ul>
+<h3 id="10-最小砂轮直径-minimum-grinding-wheel-diameter">10. 最小砂轮直径 (Minimum Grinding Wheel Diameter)</h3>
+<ul>
+<li><strong>定义</strong>: 砂轮因磨损和修整后，允许使用的最小直径。</li>
+<li><strong>单位</strong>: 毫米 (mm)。</li>
+<li><strong>解释</strong>: 当砂轮直径小于此值时，应更换砂轮。软件使用最大和最小直径范围来确保在整个砂轮寿命周期内，生成的刀具路径都是有效的，并可能用于补偿砂轮的磨损。</li>
+<li><strong>示例值</strong>: <code>400.0</code></li>
+</ul>
+<h3 id="11-砂轮直径间隔-grinding-wheel-diameter-interval">11. 砂轮直径间隔 (Grinding Wheel Diameter Interval)</h3>
+<ul>
+<li><strong>定义</strong>: 在考虑砂轮从最大到最小直径的磨损过程中，用于计算和补偿的直径变化步长。</li>
+<li><strong>单位</strong>: 毫米 (mm)。</li>
+<li><strong>解释</strong>: 软件会根据这个间隔值，预先生成多组对应不同砂轮直径的补偿程序。例如，每当砂轮直径减小2.0mm，操作员就可以调用下一组程序，以保证加工精度。</li>
+<li><strong>示例值</strong>: <code>2.0</code></li>
+</ul>
+<h3 id="12-磨削方向-grinding-direction">12. 磨削方向 (Grinding Direction)</h3>
+<ul>
+<li><strong>定义</strong>: 磨削加工时，砂轮相对于工件的轴向进给方向。</li>
+<li><strong>选项</strong>: 从右往左 / 从左往右。</li>
+<li><strong>解释</strong>: 这个选项决定了加工的起始位置和结束位置，决定了砂轮和工件的接触方式时顺磨还是逆磨。选择哪个方向通常取决于工件旋向，如果是左旋，推荐采用从左往右的方式，反之亦然。</li>
+<li><strong>示例值</strong>: <code>从右往左</code></li>
+</ul>
+<h3 id="13-输出程序路径-output-program-path">13. 输出程序路径 (Output Program Path)</h3>
+<ul>
+<li><strong>定义</strong>: 用于保存生成的数控（NC）加工程序文件的文件夹位置。</li>
+<li><strong>解释</strong>: 点击“选择路径”按钮，可以选择一个目标文件夹。软件完成计算后，会将包含所有刀具路径指令的程序文件夹保存到这个指定的路径下。</li>
+<li><strong>示例值</strong>: <code>C:\Users\Downloads</code></li>
+</ul>
 
                                 
                                 </section>
@@ -454,7 +522,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"基本参数","level":"1.3.1","depth":2,"next":{"title":"高级参数","level":"1.3.2","depth":2,"path":"genaration/advance.md","ref":"genaration/advance.md","articles":[]},"previous":{"title":"代码生成","level":"1.3","depth":1,"path":"genaration/README.md","ref":"genaration/README.md","articles":[{"title":"基本参数","level":"1.3.1","depth":2,"path":"genaration/base.md","ref":"genaration/base.md","articles":[]},{"title":"高级参数","level":"1.3.2","depth":2,"path":"genaration/advance.md","ref":"genaration/advance.md","articles":[]},{"title":"其他参数","level":"1.3.3","depth":2,"path":"genaration/others.md","ref":"genaration/others.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["theme-default"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css"},"pluginsConfig":{"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2}},"theme":"default","author":"Nie Kun","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"EnveloGrinding User Guide","language":"zh-hans","gitbook":"*","description":"EnveloGrinding 软件完整用户指南"},"file":{"path":"genaration/base.md","mtime":"2025-07-18T07:20:52.362Z","type":"markdown"},"gitbook":{"version":"6.0.3","time":"2025-07-18T07:20:59.588Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"基本参数","level":"1.3.1","depth":2,"next":{"title":"高级参数","level":"1.3.2","depth":2,"path":"genaration/advance.md","ref":"genaration/advance.md","articles":[]},"previous":{"title":"代码生成","level":"1.3","depth":1,"path":"genaration/README.md","ref":"genaration/README.md","articles":[{"title":"基本参数","level":"1.3.1","depth":2,"path":"genaration/base.md","ref":"genaration/base.md","articles":[]},{"title":"高级参数","level":"1.3.2","depth":2,"path":"genaration/advance.md","ref":"genaration/advance.md","articles":[]},{"title":"其他参数","level":"1.3.3","depth":2,"path":"genaration/others.md","ref":"genaration/others.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["theme-default"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css"},"pluginsConfig":{"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2}},"theme":"default","author":"Nie Kun","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"EnveloGrinding User Guide","language":"zh-hans","gitbook":"*","description":"EnveloGrinding 软件完整用户指南"},"file":{"path":"genaration/base.md","mtime":"2025-07-21T07:12:01.969Z","type":"markdown"},"gitbook":{"version":"6.0.3","time":"2025-07-21T07:12:09.557Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
