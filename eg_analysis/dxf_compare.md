@@ -21,4 +21,5 @@
 ---
 
 输出效果示例：
-![img](resources/dxf_compare.jpg)
+
+![img](resources/dxf_compare.png)
