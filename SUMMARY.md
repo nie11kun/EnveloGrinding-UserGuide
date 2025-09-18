@@ -16,4 +16,5 @@
     * [轴向截面计算](eg_calc/axial_cut.md)
 * [数据分析](eg_analysis/README.md)
     * [文件对比](eg_analysis/dxf_compare.md)
+    * [曲线误差对比](eg_analysis/error_compare.md)
 * [故障排除](troubleshooting/README.md)

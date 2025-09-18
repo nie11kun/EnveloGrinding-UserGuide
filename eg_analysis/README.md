@@ -1,6 +1,6 @@
 # 数据分析
 
-本章介绍如何使用 **EnveloGrinding** 对蜗杆加工精度镜像分析。主要包含`DXF 对比`等功能。
+本章介绍如何使用 **EnveloGrinding** 对蜗杆加工精度镜像分析。主要包含`DXF 对比`/`曲线误差对比`等功能。
 
 ![img](resources/main.png)
 
