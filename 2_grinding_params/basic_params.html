@@ -1,0 +1,717 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <title>基本参数详解 · EnveloGrinding User Guide</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 6.2.6">
+        <meta name="author" content="XinCore Studio">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/honkit-plugin-katex/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/@honkit/honkit-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/@honkit/honkit-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../styles/website.css">
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="advanced_params.html" />
+    
+    
+    <link rel="prev" href="./" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../1_getting_started/">
+            
+                <a href="../1_getting_started/">
+            
+                    
+                    快速开始
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../1_getting_started/installation.html">
+            
+                <a href="../1_getting_started/installation.html">
+            
+                    
+                    软件安装、授权与升级
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../1_getting_started/ui_overview.html">
+            
+                <a href="../1_getting_started/ui_overview.html">
+            
+                    
+                    界面布局与基本操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../1_getting_started/quickstart.html">
+            
+                <a href="../1_getting_started/quickstart.html">
+            
+                    
+                    三分钟快速上手
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    磨削参数与 NC 代码生成
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.3.1" data-path="basic_params.html">
+            
+                <a href="basic_params.html">
+            
+                    
+                    基本参数详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="advanced_params.html">
+            
+                <a href="advanced_params.html">
+            
+                    
+                    高级参数（机床基准与对刀）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="other_and_nc_output.html">
+            
+                <a href="other_and_nc_output.html">
+            
+                    
+                    其他参数与 NC 程序输出解读
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../3_drawing_tools/">
+            
+                <a href="../3_drawing_tools/">
+            
+                    
+                    绘图工具与砂轮截形设计
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../3_drawing_tools/conical_profile.html">
+            
+                <a href="../3_drawing_tools/conical_profile.html">
+            
+                    
+                    锥面廓形
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../3_drawing_tools/xy_points.html">
+            
+                <a href="../3_drawing_tools/xy_points.html">
+            
+                    
+                    XY点位文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../3_drawing_tools/enveloping_profile.html">
+            
+                <a href="../3_drawing_tools/enveloping_profile.html">
+            
+                    
+                    包络蜗杆砂轮截形
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../4_analysis_tools/">
+            
+                <a href="../4_analysis_tools/">
+            
+                    
+                    分析工具与精度检验
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../4_analysis_tools/axial_section.html">
+            
+                <a href="../4_analysis_tools/axial_section.html">
+            
+                    
+                    工件轴向截面计算
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../4_analysis_tools/dxf_compare.html">
+            
+                <a href="../4_analysis_tools/dxf_compare.html">
+            
+                    
+                    DXF 文件对比
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../4_analysis_tools/curve_deviation.html">
+            
+                <a href="../4_analysis_tools/curve_deviation.html">
+            
+                    
+                    曲线误差对比
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../5_parts_library_and_menus/">
+            
+                <a href="../5_parts_library_and_menus/">
+            
+                    
+                    零件库、菜单功能与交互图表
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../5_parts_library_and_menus/parts_library.html">
+            
+                <a href="../5_parts_library_and_menus/parts_library.html">
+            
+                    
+                    零件库管理指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../5_parts_library_and_menus/menus_and_charts.html">
+            
+                <a href="../5_parts_library_and_menus/menus_and_charts.html">
+            
+                    
+                    菜单栏、参数配置与 2D/3D 图表操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../6_workflows_cases/">
+            
+                <a href="../6_workflows_cases/">
+            
+                    
+                    典型工程实战案例
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../6_workflows_cases/case1_heavy_involute.html">
+            
+                <a href="../6_workflows_cases/case1_heavy_involute.html">
+            
+                    
+                    案例一：大压力角渐开线蜗杆全流程加工与检验
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../6_workflows_cases/case2_straight_tooth.html">
+            
+                <a href="../6_workflows_cases/case2_straight_tooth.html">
+            
+                    
+                    案例二：直线齿面零螺旋角蜗杆截形与修整路线
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../6_workflows_cases/case3_standard_involute_crowning.html">
+            
+                <a href="../6_workflows_cases/case3_standard_involute_crowning.html">
+            
+                    
+                    案例三：标准渐开线蜗杆接触斑点主动修形补偿
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../7_troubleshooting/">
+            
+                <a href="../7_troubleshooting/">
+            
+                    
+                    常见提示与故障排除
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            本书使用 HonKit 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >基本参数详解</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="21-基本参数详解">2.1 基本参数详解</h1>
+<p><strong><code>基本参数</code></strong> 集中管理工件基础几何、砂轮直径序列、磨削进给策略以及 <strong><code>平面</code></strong> / <strong><code>锥面</code></strong> 包络模式切换。</p>
+<p><img src="resources/ui_basic_modes_compare.png" alt="基本参数在锥面与平面模式下的界面对比"></img></p>
+<hr></hr>
+<h2 id="一、工件与轨迹几何参数">一、工件与轨迹几何参数</h2>
+<p><img src="resources/worm_geometry_schematic.png" alt="环面蜗杆与蜗轮啮合基本几何参数示意图"></img></p>
+<h3 id="1-中心距">1. 中心距</h3>
+<ul>
+<li><strong>单位</strong>：<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>mm</mtext></mrow><annotation encoding="application/x-tex">\text{mm}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord text"><span class="mord">mm</span></span></span></span></span> ｜ <strong>示例值（<code>Sample_C_117</code>）</strong>：<code>116.921</code></li>
+<li><strong>含义</strong>：蜗杆轴线与配对蜗轮回转轴线之间的最短垂直距离 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi></mrow><annotation encoding="application/x-tex">a</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">a</span></span></span></span>。</li>
+<li><strong>影响</strong>：与 <strong><code>蜗杆喉部直径</code></strong> 共同决定蜗轮分度圆半径 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mn>1</mn></msub><mo>=</mo><mi>a</mi><mo>−</mo><msub><mi>d</mi><mn>1</mn></msub><mi mathvariant="normal">/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">R_1 = a - d_1 / 2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.00773em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord mathnormal">a</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal">d</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord">/2</span></span></span></span>，直接作为输出目录 <code>PC_&lt;中心距&gt;</code> 的命名依据。</li>
+</ul>
+<h3 id="2-蜗杆喉部直径">2. 蜗杆喉部直径</h3>
+<ul>
+<li><strong>单位</strong>：<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>mm</mtext></mrow><annotation encoding="application/x-tex">\text{mm}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord text"><span class="mord">mm</span></span></span></span></span> ｜ <strong>示例值（<code>Sample_C_117</code>）</strong>：<code>38.5</code></li>
+<li><strong>含义</strong>：环面蜗杆中间最细咽喉处分度圆直径 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>d</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">d_1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.84444em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">d</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>。</li>
+<li><strong>影响</strong>：与 <strong><code>中心距</code></strong>、<strong><code>蜗轮齿数</code></strong> 联动实时计算右侧的标准喉部分度圆导程角。</li>
+</ul>
+<h3 id="3-蜗轮齿数">3. 蜗轮齿数</h3>
+<ul>
+<li><strong>单位</strong>：整数（齿） ｜ <strong>示例值（<code>Sample_C_117</code>）</strong>：<code>60</code></li>
+<li><strong>含义</strong>：配对蜗轮的牙齿总数量 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Z</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">Z_2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07153em;">Z</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.07153em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>。</li>
+<li><strong>影响</strong>：决定传动比与摇篮摆动时 <code>C</code> 轴相对 <code>B</code> 轴的联动增量转角（<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>C</mi><mo>=</mo><mo>∓</mo><mtext>sgn</mtext><mo stretchy="false">(</mo><msub><mi>h</mi><mi>N</mi></msub><mo stretchy="false">)</mo><mo>⋅</mo><msub><mi>α</mi><mn>1</mn></msub><mi mathvariant="normal">/</mi><mo stretchy="false">(</mo><mn>360</mn><mi mathvariant="normal">/</mi><msub><mi>N</mi><mn>1</mn></msub><mo stretchy="false">)</mo><mo>×</mo><mn>36</mn><msup><mn>0</mn><mo>∘</mo></msup></mrow><annotation encoding="application/x-tex">\Delta C = \mp \text{sgn}(h_N)\cdot \alpha_1 / (360 / N_1) \times 360^\circ</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord">Δ</span><span class="mord mathnormal" style="margin-right:0.07153em;">C</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">∓</span><span class="mord text"><span class="mord">sgn</span></span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">h</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.10903em;">N</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0037em;">α</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.0037em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord">/</span><span class="mopen">(</span><span class="mord">360/</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.10903em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.674115em;vertical-align:0em;"></span><span class="mord">36</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.674115em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mbin mtight">∘</span></span></span></span></span></span></span></span></span></span></span>）。</li>
+</ul>
+<h3 id="4-蜗杆旋向">4. 蜗杆旋向</h3>
+<ul>
+<li><strong>可选项</strong>：<code>右旋</code>（默认） / <code>左旋</code></li>
+<li><strong>含义</strong>：沿蜗杆轴线观察螺旋线的前进方向。</li>
+<li><strong>影响</strong>：决定加工时工件主轴 <code>C</code> 轴旋转方向及 <code>A</code> 轴倾角偏置符号。</li>
+</ul>
+<h3 id="5-蜗轮加工角度">5. 蜗轮加工角度</h3>
+<ul>
+<li><strong>单位</strong>：<code>°</code>（度） ｜ <strong>示例值（<code>Sample_C_117</code>）</strong>：<code>60.0</code></li>
+<li><strong>含义</strong>：砂轮在磨削包络运动中相对蜗轮回转中心摆动的总包络角度 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>α</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">\alpha_1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0037em;">α</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.0037em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>（对应 <code>B</code> 轴从 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>B</mi><mn>0</mn></msub><mo>+</mo><msub><mi>α</mi><mn>1</mn></msub><mi mathvariant="normal">/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">B_0 + \alpha_1/2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.05017em;">B</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.05017em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0037em;">α</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.0037em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord">/2</span></span></span></span> 摆到 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>B</mi><mn>0</mn></msub><mo>−</mo><msub><mi>α</mi><mn>1</mn></msub><mi mathvariant="normal">/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">B_0 - \alpha_1/2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.05017em;">B</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.05017em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0037em;">α</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.0037em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord">/2</span></span></span></span>）。</li>
+<li><strong>影响</strong>：必须完整覆盖蜗杆有效工作齿数对应的包络弧段并适当留出切入/切出余量。</li>
+</ul>
+<h3 id="6-砂轮安装倾角">6. 砂轮安装倾角</h3>
+<ul>
+<li><strong>单位</strong>：<code>°</code>（度） ｜ <strong>示例值（<code>Sample_C_117</code>）</strong>：<code>3.393</code></li>
+<li><strong>含义</strong>：砂轮主轴相对工件端面倾斜安装的角度（通常取图纸导程角或螺旋角）。</li>
+<li><strong>便捷功能</strong>：输入框右侧实时显示按标准公式算出的喉部分度圆导程角（如 <code>Sample_C_117</code> 处显示 <code>4.8336°</code>）；勾选右侧复选框即可一键将计算结果填入 <strong><code>砂轮安装倾角</code></strong>。</li>
+</ul>
+<hr></hr>
+<h2 id="二、包络类型与条件展开参数">二、包络类型与条件展开参数</h2>
+<h3 id="7-蜗杆类型">7. 蜗杆类型</h3>
+<ul>
+<li><strong>可选项</strong>：<code>平面</code> / <code>锥面</code></li>
+<li><strong>动态界面行为</strong>：<ul>
+<li>选 <strong><code>锥面</code></strong> 时：适用于砂轮双侧锥面或渐开线包络砂轮加工，右侧自动隐藏 <strong><code>磨削面</code></strong>、<strong><code>偏移角</code></strong>、<strong><code>偏移距离</code></strong>；</li>
+<li>选 <strong><code>平面</code></strong> 时：适用于平面二次包络环面蜗杆单面切向磨削，自动展开以下 <strong>3 项专属参数</strong>。</li>
+</ul>
+</li>
+</ul>
+<h3 id="8-磨削面（仅-平面-可见）">8. 磨削面（仅 <code>平面</code> 可见）</h3>
+<ul>
+<li><strong>可选项</strong>：<code>左齿面</code> / <code>右齿面</code></li>
+<li><strong>含义</strong>：指定当前生成程序所磨削的环面蜗杆齿面侧别（<code>右齿面</code> 加工时程序自动将安装角转向 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>+</mo><mn>18</mn><msup><mn>0</mn><mo>∘</mo></msup></mrow><annotation encoding="application/x-tex">+180^\circ</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.757445em;vertical-align:-0.08333em;"></span><span class="mord">+</span><span class="mord">18</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.674115em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mbin mtight">∘</span></span></span></span></span></span></span></span></span></span></span> 侧并反号偏置 <code>B</code> 轴中点）。</li>
+</ul>
+<h3 id="9-偏移角（仅-平面-可见）">9. 偏移角（仅 <code>平面</code> 可见）</h3>
+<ul>
+<li><strong>单位</strong>：<code>°</code>（度）</li>
+<li><strong>含义</strong>：平面包络产形平面相对基准半径线的偏移倾角。</li>
+</ul>
+<h3 id="10-偏移距离（仅-平面-可见）">10. 偏移距离（仅 <code>平面</code> 可见）</h3>
+<ul>
+<li><strong>单位</strong>：<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>mm</mtext></mrow><annotation encoding="application/x-tex">\text{mm}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord text"><span class="mord">mm</span></span></span></span></span></li>
+<li><strong>含义</strong>：平面包络产形平面相对回转中心的法向偏移距离（会在生成的 <code>.SPF</code> 文件头自动输出计算后的 <code>砂轮Z向偏移量</code> 与 <code>砂轮X向偏移量</code>）。</li>
+</ul>
+<hr></hr>
+<h2 id="三、磨削余量、砂轮范围与输出设置">三、磨削余量、砂轮范围与输出设置</h2>
+<h3 id="11-磨削总深度（带右侧绿色微调框）">11. 磨削总深度（带右侧绿色微调框）</h3>
+<ul>
+<li><strong>单位</strong>：<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>mm</mtext></mrow><annotation encoding="application/x-tex">\text{mm}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord text"><span class="mord">mm</span></span></span></span></span> ｜ <strong>示例值</strong>：主框 <code>1.0</code>、右侧绿色微调框 <code>0.0</code></li>
+<li><strong>含义</strong>：从 <code>FeedLeft</code> 最大值到 <code>0.00</code> 的余量分段覆盖范围；若 <code>磨削总深度</code> 不是 <strong><code>磨削步进</code></strong> 的整数倍，软件会自动向上取整到步进整数倍。</li>
+<li><strong>绿色微调框</strong>：用于在不改动程序跳转标签的前提下，整体多磨或少磨一定深度以微调最终齿厚（实际计算半径 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mrow><mn>1</mn><mo separator="true">,</mo><mtext>cur</mtext></mrow></msub><mo>=</mo><msub><mi>R</mi><mn>1</mn></msub><mo>−</mo><mo stretchy="false">(</mo><mtext>val</mtext><mo>+</mo><mtext>微调值</mtext><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">R_{1,\text{cur}} = R_1 - (\text{val} + \text{微调值})</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.969438em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.301108em;"><span style="top:-2.5500000000000003em;margin-left:-0.00773em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span><span class="mpunct mtight">,</span><span class="mord text mtight"><span class="mord mtight">cur</span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.00773em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord text"><span class="mord">val</span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord text"><span class="mord cjk_fallback">微调值</span></span><span class="mclose">)</span></span></span></span>）。</li>
+</ul>
+<h3 id="12-磨削步进">12. 磨削步进</h3>
+<ul>
+<li><strong>单位</strong>：<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>mm</mtext></mrow><annotation encoding="application/x-tex">\text{mm}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord text"><span class="mord">mm</span></span></span></span></span> ｜ <strong>示例值</strong>：<code>0.1</code></li>
+<li><strong>含义</strong>：程序内相邻 <code>CV_x_xx</code> 余量分支之间的步长（例如 <code>1.0</code> 总深度配 <code>0.1</code> 步进将生成 <code>CV_1_00</code> 至 <code>CV_0_00</code> 共 11 个坐标段）。</li>
+</ul>
+<h3 id="13-最大砂轮直径--最小砂轮直径--砂轮直径间隔">13. 最大砂轮直径 / 最小砂轮直径 / 砂轮直径间隔</h3>
+<ul>
+<li><strong>单位</strong>：<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>mm</mtext></mrow><annotation encoding="application/x-tex">\text{mm}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord text"><span class="mord">mm</span></span></span></span></span> ｜ <strong>示例值（<code>Sample_C_117</code>）</strong>：<code>460.0</code> / <code>450.0</code> / <code>2.0</code></li>
+<li><strong>约束</strong>：<strong><code>最大砂轮直径</code></strong> 必须大于等于 <strong><code>最小砂轮直径</code></strong>，否则弹窗报错。</li>
+<li><strong>生成逻辑</strong>：软件从 <strong><code>最小砂轮直径</code></strong> 起每隔 <strong><code>砂轮直径间隔</code></strong> 递增至 <strong><code>最大砂轮直径</code></strong>，为每个直径生成独立 <code>.SPF</code> 文件（如 <code>DIA_450_0000.SPF</code> ~ <code>DIA_460_0000.SPF</code>）。</li>
+</ul>
+<h3 id="14-磨削方向">14. 磨削方向</h3>
+<ul>
+<li><strong>可选项</strong>：<code>从左往右</code> / <code>从右往左</code></li>
+<li><strong>含义</strong>：控制砂轮沿蜗杆轴向走刀的起终点顺序（互换 <code>Start_Pos</code> 与 <code>End_Pos</code> 及对应 <code>B</code> / <code>C</code> 轴起止点），用于匹配顺磨或逆磨工况。</li>
+</ul>
+<h3 id="15-siemens程序加密">15. Siemens程序加密</h3>
+<ul>
+<li><strong>选项</strong>：复选框（默认不勾选）</li>
+<li><strong>平台限制</strong>：<strong>仅 Windows 版可用</strong>（macOS 下自动置灰禁用）。</li>
+<li><strong>效果</strong>：勾选后调用内置加密组件将明文 <code>.SPF</code> 转换为西门子机床专用的 <code>.cpf</code> 加密程序，并自动删除原始 <code>.SPF</code>。</li>
+</ul>
+<h3 id="16-输出程序路径">16. 输出程序路径</h3>
+<ul>
+<li><strong>操作</strong>：点击 <strong><code>选择路径</code></strong> 指定根目录（例如 <code>D:\EG_Demo\NC_Output</code>）。</li>
+<li><strong>输出位置</strong>：软件会在该目录下自动重建 <code>PC_&lt;中心距&gt;</code> 文件夹（4 位小数下划线拼接，如 <code>PC_116_9210</code>）并存入全部程序。</li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="./" class="navigation navigation-prev " aria-label="Previous page: 磨削参数与 NC 代码生成">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="advanced_params.html" class="navigation navigation-next " aria-label="Next page: 高级参数（机床基准与对刀）">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"基本参数详解","level":"1.3.1","depth":2,"next":{"title":"高级参数（机床基准与对刀）","level":"1.3.2","depth":2,"path":"2_grinding_params/advanced_params.md","ref":"2_grinding_params/advanced_params.md","articles":[]},"previous":{"title":"磨削参数与 NC 代码生成","level":"1.3","depth":1,"path":"2_grinding_params/README.md","ref":"2_grinding_params/README.md","articles":[{"title":"基本参数详解","level":"1.3.1","depth":2,"path":"2_grinding_params/basic_params.md","ref":"2_grinding_params/basic_params.md","articles":[]},{"title":"高级参数（机床基准与对刀）","level":"1.3.2","depth":2,"path":"2_grinding_params/advanced_params.md","ref":"2_grinding_params/advanced_params.md","articles":[]},{"title":"其他参数与 NC 程序输出解读","level":"1.3.3","depth":2,"path":"2_grinding_params/other_and_nc_output.md","ref":"2_grinding_params/other_and_nc_output.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["theme-default","katex"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css"},"pluginsConfig":{"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"katex":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2}},"theme":"default","author":"XinCore Studio","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"EnveloGrinding User Guide","language":"zh-hans","gitbook":"*","description":"EnveloGrinding 包络蜗杆磨削软件完整用户指南"},"file":{"path":"2_grinding_params/basic_params.md","mtime":"2026-11-24T03:17:16.179Z","type":"markdown"},"gitbook":{"version":"6.2.6","time":"2026-11-24T03:17:23.770Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/@honkit/honkit-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/@honkit/honkit-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/@honkit/honkit-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

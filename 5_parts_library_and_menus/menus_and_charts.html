@@ -1,0 +1,708 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <title>菜单栏、参数配置与 2D/3D 图表操作 · EnveloGrinding User Guide</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 6.2.6">
+        <meta name="author" content="XinCore Studio">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/honkit-plugin-katex/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/@honkit/honkit-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/@honkit/honkit-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../styles/website.css">
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../6_workflows_cases/" />
+    
+    
+    <link rel="prev" href="parts_library.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../1_getting_started/">
+            
+                <a href="../1_getting_started/">
+            
+                    
+                    快速开始
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../1_getting_started/installation.html">
+            
+                <a href="../1_getting_started/installation.html">
+            
+                    
+                    软件安装、授权与升级
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../1_getting_started/ui_overview.html">
+            
+                <a href="../1_getting_started/ui_overview.html">
+            
+                    
+                    界面布局与基本操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../1_getting_started/quickstart.html">
+            
+                <a href="../1_getting_started/quickstart.html">
+            
+                    
+                    三分钟快速上手
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../2_grinding_params/">
+            
+                <a href="../2_grinding_params/">
+            
+                    
+                    磨削参数与 NC 代码生成
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../2_grinding_params/basic_params.html">
+            
+                <a href="../2_grinding_params/basic_params.html">
+            
+                    
+                    基本参数详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../2_grinding_params/advanced_params.html">
+            
+                <a href="../2_grinding_params/advanced_params.html">
+            
+                    
+                    高级参数（机床基准与对刀）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../2_grinding_params/other_and_nc_output.html">
+            
+                <a href="../2_grinding_params/other_and_nc_output.html">
+            
+                    
+                    其他参数与 NC 程序输出解读
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../3_drawing_tools/">
+            
+                <a href="../3_drawing_tools/">
+            
+                    
+                    绘图工具与砂轮截形设计
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../3_drawing_tools/conical_profile.html">
+            
+                <a href="../3_drawing_tools/conical_profile.html">
+            
+                    
+                    锥面廓形
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../3_drawing_tools/xy_points.html">
+            
+                <a href="../3_drawing_tools/xy_points.html">
+            
+                    
+                    XY点位文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../3_drawing_tools/enveloping_profile.html">
+            
+                <a href="../3_drawing_tools/enveloping_profile.html">
+            
+                    
+                    包络蜗杆砂轮截形
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../4_analysis_tools/">
+            
+                <a href="../4_analysis_tools/">
+            
+                    
+                    分析工具与精度检验
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../4_analysis_tools/axial_section.html">
+            
+                <a href="../4_analysis_tools/axial_section.html">
+            
+                    
+                    工件轴向截面计算
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../4_analysis_tools/dxf_compare.html">
+            
+                <a href="../4_analysis_tools/dxf_compare.html">
+            
+                    
+                    DXF 文件对比
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../4_analysis_tools/curve_deviation.html">
+            
+                <a href="../4_analysis_tools/curve_deviation.html">
+            
+                    
+                    曲线误差对比
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    零件库、菜单功能与交互图表
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="parts_library.html">
+            
+                <a href="parts_library.html">
+            
+                    
+                    零件库管理指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.6.2" data-path="menus_and_charts.html">
+            
+                <a href="menus_and_charts.html">
+            
+                    
+                    菜单栏、参数配置与 2D/3D 图表操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../6_workflows_cases/">
+            
+                <a href="../6_workflows_cases/">
+            
+                    
+                    典型工程实战案例
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../6_workflows_cases/case1_heavy_involute.html">
+            
+                <a href="../6_workflows_cases/case1_heavy_involute.html">
+            
+                    
+                    案例一：大压力角渐开线蜗杆全流程加工与检验
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../6_workflows_cases/case2_straight_tooth.html">
+            
+                <a href="../6_workflows_cases/case2_straight_tooth.html">
+            
+                    
+                    案例二：直线齿面零螺旋角蜗杆截形与修整路线
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../6_workflows_cases/case3_standard_involute_crowning.html">
+            
+                <a href="../6_workflows_cases/case3_standard_involute_crowning.html">
+            
+                    
+                    案例三：标准渐开线蜗杆接触斑点主动修形补偿
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../7_troubleshooting/">
+            
+                <a href="../7_troubleshooting/">
+            
+                    
+                    常见提示与故障排除
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            本书使用 HonKit 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >菜单栏、参数配置与 2D/3D 图表操作</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="52-菜单栏、参数配置与-2d3d-图表操作">5.2 菜单栏、参数配置与 2D/3D 图表操作</h1>
+<p>除主窗口顶部的 <strong><code>3 大主选项卡 × 3 子选项卡</code>（共 9 个子功能页）</strong> 外，顶部菜单栏提供语言切换、在线升级、零件库调用与官方资源入口；所有绘图与分析模块产出的独立 HTML 图表均内置统一的 Plotly 交互操作规范。</p>
+<hr></hr>
+<h2 id="一、顶部菜单栏完整功能清单">一、顶部菜单栏完整功能清单</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">一级菜单</th>
+<th style="text-align:left">二级菜单项</th>
+<th style="text-align:left">实际行为与使用说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong><code>设置</code></strong></td>
+<td style="text-align:left"><strong><code>中文</code></strong> / <strong><code>English</code></strong></td>
+<td style="text-align:left">在简体中文与 English 之间即时切换，自动将 <code>language_code</code> 写入 <code>eg_config_main.json</code> 并刷新当前界面文案</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong><code>设置</code></strong></td>
+<td style="text-align:left"><strong><code>检查更新</code></strong></td>
+<td style="text-align:left">向服务器查询最新版本；检测到新版本后可确认下载安装包（实时展示下载速度 <code>KB/s</code> 与百分比进度）并引导更新</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong><code>设置</code></strong></td>
+<td style="text-align:left"><strong><code>更新日志</code></strong></td>
+<td style="text-align:left">弹出版本说明窗口，浏览从历史版本至当前 <code>v1.19.0</code> 的新增功能与修复清单</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong><code>工具</code></strong></td>
+<td style="text-align:left"><strong><code>零件库</code></strong></td>
+<td style="text-align:left">打开 <a href="parts_library.html">零件库</a> 管理窗口，执行工件档案的 <code>新增</code>、<code>修改</code>、<code>删除</code>、<code>刷新</code> 与 <code>导入</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><strong><code>关于</code></strong></td>
+<td style="text-align:left"><strong><code>官方网站</code></strong></td>
+<td style="text-align:left">调用系统默认浏览器打开官网（<a href="https://eg.niekun.net/" target="_blank">https://eg.niekun.net/</a>）</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong><code>关于</code></strong></td>
+<td style="text-align:left"><strong><code>用户手册</code></strong></td>
+<td style="text-align:left">调用系统默认浏览器打开在线手册（<a href="https://eg-manual.niekun.net/" target="_blank">https://eg-manual.niekun.net/</a>）</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong><code>关于</code></strong></td>
+<td style="text-align:left"><strong><code>关于我们</code></strong></td>
+<td style="text-align:left">调用系统默认浏览器打开开发团队主页（<a href="https://xincore.niekun.net/" target="_blank">https://xincore.niekun.net/</a>）</td>
+</tr>
+</tbody>
+</table>
+<hr></hr>
+<h2 id="二、本地配置文件与持久化机制">二、本地配置文件与持久化机制</h2>
+<p><strong>EnveloGrinding</strong> 将当前工作区所有输入项拆分为 3 份独立 JSON 文件，存放在 <code>~/.eg/</code>（Windows 为 <code>%USERPROFILE%\.eg\</code>）：</p>
+<ul>
+<li><code>eg_config_main.json</code>：对应 <strong><code>磨削参数</code></strong>（<code>基本参数</code>、<code>高级参数</code>、<code>其他参数</code>）及界面语言设置；</li>
+<li><code>eg_config_draw.json</code>：对应 <strong><code>绘图工具</code></strong>（<code>锥面廓形</code>、<code>XY点位文件</code>、<code>包络蜗杆砂轮截形</code>）；</li>
+<li><p><code>eg_config_tool.json</code>：对应 <strong><code>分析工具</code></strong>（<code>工件轴向截面计算</code>、<code>DXF 文件对比</code>、<code>曲线误差对比</code>）。</p>
+</li>
+<li><p><strong>何时写入保存</strong>：</p>
+<ul>
+<li>点击主窗口底部右侧 <strong><code>保存设置</code></strong>，软件校验各页输入并将上述三份配置文件同步落盘；</li>
+<li>点击底部左侧主按钮执行计算（如 <strong><code>生成代码</code></strong>、<strong><code>生成截形</code></strong> 等）前也会将有效参数保存，避免计算后丢失输入；</li>
+<li>在 <strong><code>设置</code></strong> 菜单切换语言时会即时写入 <code>language_code</code>。</li>
+</ul>
+</li>
+<li><strong>何时读取恢复</strong>：<ul>
+<li>下次启动软件进入主界面时自动加载三份配置文件恢复上次界面状态；</li>
+<li>在 <strong><code>零件库</code></strong> 中选中零件点击 <strong><code>导入</code></strong> 时，覆盖这三份配置文件并立即刷新全部界面控件。</li>
+</ul>
+</li>
+<li><strong>输出位置定位</strong>：每次点击计算生成 <code>.SPF</code>/<code>.dxf</code>/<code>.html</code> 成功后，Windows 下会自动调用资源管理器定位并高亮选中新生成的文件或目录（无需额外翻找）。</li>
+</ul>
+<hr></hr>
+<h2 id="三、2d3d-交互式图表通用操作">三、2D/3D 交互式图表通用操作</h2>
+<p>运行 <strong><code>锥面廓形</code></strong>、<strong><code>XY点位文件</code></strong>、<strong><code>包络蜗杆砂轮截形</code></strong>、<strong><code>工件轴向截面计算</code></strong>、<strong><code>DXF 文件对比</code></strong> 或 <strong><code>曲线误差对比</code></strong> 后，软件会生成单文件自包含 Plotly HTML 并在浏览器中打开：</p>
+<ul>
+<li><strong>框选放大与平移</strong>：在 2D 图表中按住鼠标左键框选区域即可局部放大齿根圆弧或超差区段；右上角工具栏可在 <strong><code>Zoom</code></strong>（缩放）与 <strong><code>Pan</code></strong>（平移）间切换。</li>
+<li><strong>滚轮缩放与 3D 视角</strong>：滑动鼠标滚轮围绕光标位置缩放视图；在 3D 啮合/螺旋曲线图中，按住左键拖拽旋转三维视角，右键拖拽平移模型。</li>
+<li><strong>视图快速复位与视角保持</strong>：双击画布空白处（或点击右上角 <code>Reset axes</code> / <code>Autoscale</code>）可一键还原初始视野；图表内置 <code>uirevision</code> 视图锁定，在切换图层显隐或窗口尺寸变化时不会意外重置当前观察位置。</li>
+<li><strong>图例图层开关</strong>：<ul>
+<li><strong>单击</strong>图例中的曲线/构件名称，可单独隐藏或重新显示该图层（例如在 3D 图中单独隐藏蜗杆实体只观察接触线）；</li>
+<li><strong>双击</strong>某条图例项，可快速隔离仅显示该组数据；再次双击恢复全部图层。</li>
+</ul>
+</li>
+<li><strong>一键导出高清图片</strong>：点击右上角工具栏相机图标 <strong><code>Download plot as a png</code></strong>，即可将当前局部放大图或 3D 视角直接存为 PNG 用于质检报告。</li>
+</ul>
+<hr></hr>
+<h2 id="四、右下角工艺参数与数据解读指南">四、右下角工艺参数与数据解读指南</h2>
+<p>绘图与包络模块生成的 2D/3D HTML 右下角（及误差对比统计区）通常附带折叠式浮动面板 <strong><code>📊 工艺参数与数据解读指南</code></strong>：</p>
+<ul>
+<li><strong>展开与收起</strong>：默认状态下以紧凑条形式折叠显示（按钮为 <strong><code>▸ 展开</code></strong>），避免遮挡几何曲线；点击后展开并显示 <strong><code>▾ 收起</code></strong>，展开层以最高层级（<code>z-index: 2000</code>）覆盖在图例上方，确保完整阅读不被遮挡。</li>
+<li><strong>核心核对信息</strong>：卡片内集中列出了当前计算的理论与加工关键参数、圆柱蜗杆共轭摆角 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Σ</mi></mrow><annotation encoding="application/x-tex">\Sigma</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord">Σ</span></span></span></span>、实际槽底直径 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mi>d</mi><mi>f</mi><mo mathvariant="normal" lspace="0em" rspace="0em">′</mo></msubsup></mrow><annotation encoding="application/x-tex">d_f'</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.1711079999999998em;vertical-align:-0.4192159999999999em;"></span><span class="mord"><span class="mord mathnormal">d</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.751892em;"><span style="top:-2.4168920000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.10764em;">f</span></span></span><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.4192159999999999em;"><span></span></span></span></span></span></span></span></span></span> 与切深偏差、有效渐开线起始直径 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>d</mi><mtext>sap</mtext></msub></mrow><annotation encoding="application/x-tex">d_{\text{sap}}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.980548em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathnormal">d</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.15139200000000003em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord text mtight"><span class="mord mtight">sap</span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span></span></span></span>、根切阶梯检验及装配顶隙评估结论，配合 2D/3D 曲线即可完成现场快速复核。</li>
+<li><strong>等比例视觉保证</strong>：所有截面与廓形 2D 图表均默认锁定物理 <code>1:1</code> 纵横比例，确保目测齿形压力角、槽宽与直线度时不存在坐标轴拉伸失真。</li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="parts_library.html" class="navigation navigation-prev " aria-label="Previous page: 零件库管理指南">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../6_workflows_cases/" class="navigation navigation-next " aria-label="Next page: 典型工程实战案例">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"菜单栏、参数配置与 2D/3D 图表操作","level":"1.6.2","depth":2,"next":{"title":"典型工程实战案例","level":"1.7","depth":1,"path":"6_workflows_cases/README.md","ref":"6_workflows_cases/README.md","articles":[{"title":"案例一：大压力角渐开线蜗杆全流程加工与检验","level":"1.7.1","depth":2,"path":"6_workflows_cases/case1_heavy_involute.md","ref":"6_workflows_cases/case1_heavy_involute.md","articles":[]},{"title":"案例二：直线齿面零螺旋角蜗杆截形与修整路线","level":"1.7.2","depth":2,"path":"6_workflows_cases/case2_straight_tooth.md","ref":"6_workflows_cases/case2_straight_tooth.md","articles":[]},{"title":"案例三：标准渐开线蜗杆接触斑点主动修形补偿","level":"1.7.3","depth":2,"path":"6_workflows_cases/case3_standard_involute_crowning.md","ref":"6_workflows_cases/case3_standard_involute_crowning.md","articles":[]}]},"previous":{"title":"零件库管理指南","level":"1.6.1","depth":2,"path":"5_parts_library_and_menus/parts_library.md","ref":"5_parts_library_and_menus/parts_library.md","articles":[]},"dir":"ltr"},"config":{"plugins":["theme-default","katex"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css"},"pluginsConfig":{"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"katex":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2}},"theme":"default","author":"XinCore Studio","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"EnveloGrinding User Guide","language":"zh-hans","gitbook":"*","description":"EnveloGrinding 包络蜗杆磨削软件完整用户指南"},"file":{"path":"5_parts_library_and_menus/menus_and_charts.md","mtime":"2026-11-24T03:17:16.200Z","type":"markdown"},"gitbook":{"version":"6.2.6","time":"2026-11-24T03:17:23.770Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/@honkit/honkit-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/@honkit/honkit-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/@honkit/honkit-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

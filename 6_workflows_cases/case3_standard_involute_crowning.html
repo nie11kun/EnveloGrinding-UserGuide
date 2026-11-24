@@ -1,0 +1,695 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <title>案例三：标准渐开线蜗杆接触斑点主动修形补偿 · EnveloGrinding User Guide</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 6.2.6">
+        <meta name="author" content="XinCore Studio">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/honkit-plugin-katex/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/@honkit/honkit-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/@honkit/honkit-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../styles/website.css">
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../7_troubleshooting/" />
+    
+    
+    <link rel="prev" href="case2_straight_tooth.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../1_getting_started/">
+            
+                <a href="../1_getting_started/">
+            
+                    
+                    快速开始
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../1_getting_started/installation.html">
+            
+                <a href="../1_getting_started/installation.html">
+            
+                    
+                    软件安装、授权与升级
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../1_getting_started/ui_overview.html">
+            
+                <a href="../1_getting_started/ui_overview.html">
+            
+                    
+                    界面布局与基本操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../1_getting_started/quickstart.html">
+            
+                <a href="../1_getting_started/quickstart.html">
+            
+                    
+                    三分钟快速上手
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../2_grinding_params/">
+            
+                <a href="../2_grinding_params/">
+            
+                    
+                    磨削参数与 NC 代码生成
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../2_grinding_params/basic_params.html">
+            
+                <a href="../2_grinding_params/basic_params.html">
+            
+                    
+                    基本参数详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../2_grinding_params/advanced_params.html">
+            
+                <a href="../2_grinding_params/advanced_params.html">
+            
+                    
+                    高级参数（机床基准与对刀）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../2_grinding_params/other_and_nc_output.html">
+            
+                <a href="../2_grinding_params/other_and_nc_output.html">
+            
+                    
+                    其他参数与 NC 程序输出解读
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../3_drawing_tools/">
+            
+                <a href="../3_drawing_tools/">
+            
+                    
+                    绘图工具与砂轮截形设计
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../3_drawing_tools/conical_profile.html">
+            
+                <a href="../3_drawing_tools/conical_profile.html">
+            
+                    
+                    锥面廓形
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../3_drawing_tools/xy_points.html">
+            
+                <a href="../3_drawing_tools/xy_points.html">
+            
+                    
+                    XY点位文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../3_drawing_tools/enveloping_profile.html">
+            
+                <a href="../3_drawing_tools/enveloping_profile.html">
+            
+                    
+                    包络蜗杆砂轮截形
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../4_analysis_tools/">
+            
+                <a href="../4_analysis_tools/">
+            
+                    
+                    分析工具与精度检验
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../4_analysis_tools/axial_section.html">
+            
+                <a href="../4_analysis_tools/axial_section.html">
+            
+                    
+                    工件轴向截面计算
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../4_analysis_tools/dxf_compare.html">
+            
+                <a href="../4_analysis_tools/dxf_compare.html">
+            
+                    
+                    DXF 文件对比
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../4_analysis_tools/curve_deviation.html">
+            
+                <a href="../4_analysis_tools/curve_deviation.html">
+            
+                    
+                    曲线误差对比
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../5_parts_library_and_menus/">
+            
+                <a href="../5_parts_library_and_menus/">
+            
+                    
+                    零件库、菜单功能与交互图表
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../5_parts_library_and_menus/parts_library.html">
+            
+                <a href="../5_parts_library_and_menus/parts_library.html">
+            
+                    
+                    零件库管理指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../5_parts_library_and_menus/menus_and_charts.html">
+            
+                <a href="../5_parts_library_and_menus/menus_and_charts.html">
+            
+                    
+                    菜单栏、参数配置与 2D/3D 图表操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    典型工程实战案例
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="case1_heavy_involute.html">
+            
+                <a href="case1_heavy_involute.html">
+            
+                    
+                    案例一：大压力角渐开线蜗杆全流程加工与检验
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="case2_straight_tooth.html">
+            
+                <a href="case2_straight_tooth.html">
+            
+                    
+                    案例二：直线齿面零螺旋角蜗杆截形与修整路线
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.7.3" data-path="case3_standard_involute_crowning.html">
+            
+                <a href="case3_standard_involute_crowning.html">
+            
+                    
+                    案例三：标准渐开线蜗杆接触斑点主动修形补偿
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../7_troubleshooting/">
+            
+                <a href="../7_troubleshooting/">
+            
+                    
+                    常见提示与故障排除
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            本书使用 HonKit 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >案例三：标准渐开线蜗杆接触斑点主动修形补偿</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="63-案例三：标准渐开线蜗杆接触斑点主动修形补偿">6.3 案例三：标准渐开线蜗杆接触斑点主动修形补偿</h1>
+<p>在实际齿轮副装配跑合中，常出现齿面接触斑点偏高（蜗杆齿顶干涉）、偏低（蜗杆齿根干涉）或载荷向边缘扩散过宽的情况。本案例基于标准 <code>20°</code> 压力角规格 <strong><code>Sample_B_90</code></strong>，对比 <strong>理论基准工况</strong> 与 <strong>主动修形补偿工况（<code>压力角补偿量 Δα (°) = +0.15°</code> + <code>中心距补偿量 Δa (mm) = -0.2 mm</code>）</strong> 的定量变化。</p>
+<hr></hr>
+<h2 id="一、基准工件参数（sampleb90）">一、基准工件参数（<code>Sample_B_90</code>）</h2>
+<p>从 <strong><code>工具</code> <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>→</mo></mrow><annotation encoding="application/x-tex">\rightarrow</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.36687em;vertical-align:0em;"></span><span class="mrel">→</span></span></span></span> <code>零件库</code></strong> 点击 <strong><code>导入</code></strong> 载入 <code>Sample_B_90</code>（中小模数标准压力角代表件）：</p>
+<ul>
+<li><strong>齿轮齿面类型</strong>：<code>渐开线齿轮</code></li>
+<li><strong>基本几何</strong>：<code>法向模数 Mn = 2.5 mm</code>、<code>法向压力角 αn (°) = 20°</code>、<code>蜗轮齿数 Z2 = 55</code>、<code>螺旋角 β (°) = 2.829°</code></li>
+<li><strong>蜗杆与砂轮</strong>：<code>蜗杆头数 Z1 = 1</code>、<code>蜗杆分度圆直径 d1 = 42.332 mm</code>、<code>蜗轮面宽 B = 50.0 mm</code>、<code>蜗杆法向齿厚中值 Sn = 3.467 mm</code>、<code>蜗杆齿顶高 ha = 2.5 mm</code>、<code>蜗杆全齿高 h = 5.625 mm</code>、<code>砂轮外径 Ds = 460.0 mm</code>、<code>参与啮合齿数 = 5</code>、<code>修整延长齿高 = 5.0 mm</code></li>
+<li><strong>基准磨削设置</strong>：<code>中心距 = 90.0 mm</code>、<code>蜗杆喉部直径 = 42.332</code>、<code>蜗轮齿数 = 55</code>、<code>砂轮安装倾角 = 2.829</code></li>
+</ul>
+<hr></hr>
+<h2 id="二、基准-vs-主动修形定量对照表">二、基准 vs 主动修形定量对照表</h2>
+<p>保持基本模数、齿数与 <code>Sn = 3.467 mm</code> 不变，在 <strong><code>包络蜗杆砂轮截形</code></strong> 最下方 <strong><code>【五】机床误差主动修形补偿 (可选)</code></strong> 输入 <code>压力角补偿量 Δα (°) = 0.15</code> 与 <code>中心距补偿量 Δa (mm) = -0.2</code> 后点击 <strong><code>生成截形</code></strong>，实算差异如下：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">对比项目</th>
+<th style="text-align:left">理论基准（<code>Δα=0, Δa=0</code>）</th>
+<th style="text-align:left">主动修形（<code>Δα=+0.15°, Δa=-0.2 mm</code>）</th>
+<th style="text-align:left">工程意义与变化趋势</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">实际加工压力角</td>
+<td style="text-align:left"><code>20.000°</code></td>
+<td style="text-align:left"><code>20.150°</code></td>
+<td style="text-align:left">砂轮根部变胖并多切蜗杆齿顶，将接触斑点向下（齿根方向）推动</td>
+</tr>
+<tr>
+<td style="text-align:left">实际加工中心距 <code>a'</code></td>
+<td style="text-align:left"><code>90.000 mm</code></td>
+<td style="text-align:left"><code>89.800 mm</code></td>
+<td style="text-align:left">负向中心距补偿使砂轮整体变胖、对蜗杆齿顶与齿根双向修缘</td>
+</tr>
+<tr>
+<td style="text-align:left">磨削中心距（砂轮-蜗杆）</td>
+<td style="text-align:left"><code>248.041 mm</code></td>
+<td style="text-align:left"><code>247.841 mm</code></td>
+<td style="text-align:left">同步随 <code>Δa</code> 减小 <code>0.200 mm</code></td>
+</tr>
+<tr>
+<td style="text-align:left">产形轮基圆半径 <code>rb</code></td>
+<td style="text-align:left"><code>64.673 mm</code></td>
+<td style="text-align:left"><code>64.611 mm</code></td>
+<td style="text-align:left">压力角增大导致基圆略微收缩（<code>db</code> 由 <code>129.347</code> 降至 <code>129.223 mm</code>）</td>
+</tr>
+<tr>
+<td style="text-align:left">变位系数 <code>x</code></td>
+<td style="text-align:left"><code>0.2528</code></td>
+<td style="text-align:left"><code>0.2507</code></td>
+<td style="text-align:left">为维持目标法向齿厚 <code>Sn = 3.467 mm</code>，变位自动微小重算</td>
+</tr>
+<tr>
+<td style="text-align:left">实际磨削槽底直径 <code>df'</code></td>
+<td style="text-align:left"><code>132.668 mm</code>（偏差 <code>+0.000 mm</code>）</td>
+<td style="text-align:left"><code>132.268 mm</code>（偏差 <code>-0.400 mm</code>）</td>
+<td style="text-align:left">槽底切深增加，有效渐开线起点 <code>dsap</code> 由 <code>133.168</code> 下移至 <code>132.768 mm</code></td>
+</tr>
+<tr>
+<td style="text-align:left">装配槽底顶隙评估</td>
+<td style="text-align:left"><code>标准匹配 (与理论顶隙一致)</code></td>
+<td style="text-align:left"><code>偏深 (顶隙富余, 需注意齿根弯曲强度)</code></td>
+<td style="text-align:left">系统自动提示复核齿根弯曲强度与安全余量</td>
+</tr>
+</tbody>
+</table>
+<p><img src="resources/case3_crowning_compare.png" alt="Sample_B_90 基准与主动修形对比"></img></p>
+<hr></hr>
+<h2 id="三、车间调机与选参实操要点">三、车间调机与选参实操要点</h2>
+<ul>
+<li><strong>按试切斑点方向选择补偿量</strong>：<ul>
+<li><strong>解决蜗杆齿顶干涉（斑点偏高）</strong>：输入正的 <strong><code>压力角补偿量 Δα (°)</code></strong>（如 <code>+0.15</code>），使砂轮根部变胖、切去蜗杆齿顶多余材料，将接触斑点向<strong>齿根方向</strong>推；</li>
+<li><strong>解决蜗杆齿根干涉（斑点偏低）</strong>：输入负的 <strong><code>压力角补偿量 Δα (°)</code></strong>（如 <code>-0.15</code>），将接触斑点向<strong>齿顶方向</strong>移动；</li>
+<li><strong>全齿面鼓形聚焦（消除边缘分散接触）</strong>：输入负的 <strong><code>中心距补偿量 Δa (mm)</code></strong>（如 <code>-0.2</code>），使砂轮整体变胖，磨削时额外切去蜗杆齿顶与齿根形成双向修缘，将边缘斑点强制收缩并聚焦到齿面正中心（极少输入正值）。</li>
+</ul>
+</li>
+<li><strong>防根切与强度底线</strong>：施加负向 <code>Δa</code> 后，务必检查 2D 图右下角 <strong><code>📊 工艺参数与数据解读指南</code></strong> 或 <code>_11</code> DXF 文本中的 <code>有效渐开线起始直径 dsap</code>、<code>切深偏差</code> 与 <code>装配槽底顶隙评估</code>，确认无根切且齿根弯曲强度满足要求后再下发加工。</li>
+<li><strong>另存为独立零件方案</strong>：调机验证满意后，先在主界面点击底部 <strong><code>保存设置</code></strong>，再打开 <strong><code>工具</code> <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>→</mo></mrow><annotation encoding="application/x-tex">\rightarrow</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.36687em;vertical-align:0em;"></span><span class="mrel">→</span></span></span></span> <code>零件库</code></strong> 点击 <strong><code>新增</code></strong> 另存为独立版本（例如 <code>Sample_B_90_Crowned</code>），避免覆盖原始理论基准配置。</li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="case2_straight_tooth.html" class="navigation navigation-prev " aria-label="Previous page: 案例二：直线齿面零螺旋角蜗杆截形与修整路线">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../7_troubleshooting/" class="navigation navigation-next " aria-label="Next page: 常见提示与故障排除">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"案例三：标准渐开线蜗杆接触斑点主动修形补偿","level":"1.7.3","depth":2,"next":{"title":"常见提示与故障排除","level":"1.8","depth":1,"path":"7_troubleshooting/README.md","ref":"7_troubleshooting/README.md","articles":[]},"previous":{"title":"案例二：直线齿面零螺旋角蜗杆截形与修整路线","level":"1.7.2","depth":2,"path":"6_workflows_cases/case2_straight_tooth.md","ref":"6_workflows_cases/case2_straight_tooth.md","articles":[]},"dir":"ltr"},"config":{"plugins":["theme-default","katex"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css"},"pluginsConfig":{"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"katex":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2}},"theme":"default","author":"XinCore Studio","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"EnveloGrinding User Guide","language":"zh-hans","gitbook":"*","description":"EnveloGrinding 包络蜗杆磨削软件完整用户指南"},"file":{"path":"6_workflows_cases/case3_standard_involute_crowning.md","mtime":"2026-11-24T03:17:16.200Z","type":"markdown"},"gitbook":{"version":"6.2.6","time":"2026-11-24T03:17:23.770Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/@honkit/honkit-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/@honkit/honkit-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/@honkit/honkit-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

@@ -1,0 +1,761 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <title>其他参数与 NC 程序输出解读 · EnveloGrinding User Guide</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 6.2.6">
+        <meta name="author" content="XinCore Studio">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/honkit-plugin-katex/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/@honkit/honkit-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/@honkit/honkit-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../styles/website.css">
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../3_drawing_tools/" />
+    
+    
+    <link rel="prev" href="advanced_params.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../1_getting_started/">
+            
+                <a href="../1_getting_started/">
+            
+                    
+                    快速开始
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../1_getting_started/installation.html">
+            
+                <a href="../1_getting_started/installation.html">
+            
+                    
+                    软件安装、授权与升级
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../1_getting_started/ui_overview.html">
+            
+                <a href="../1_getting_started/ui_overview.html">
+            
+                    
+                    界面布局与基本操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../1_getting_started/quickstart.html">
+            
+                <a href="../1_getting_started/quickstart.html">
+            
+                    
+                    三分钟快速上手
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    磨削参数与 NC 代码生成
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="basic_params.html">
+            
+                <a href="basic_params.html">
+            
+                    
+                    基本参数详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="advanced_params.html">
+            
+                <a href="advanced_params.html">
+            
+                    
+                    高级参数（机床基准与对刀）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.3" data-path="other_and_nc_output.html">
+            
+                <a href="other_and_nc_output.html">
+            
+                    
+                    其他参数与 NC 程序输出解读
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../3_drawing_tools/">
+            
+                <a href="../3_drawing_tools/">
+            
+                    
+                    绘图工具与砂轮截形设计
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../3_drawing_tools/conical_profile.html">
+            
+                <a href="../3_drawing_tools/conical_profile.html">
+            
+                    
+                    锥面廓形
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../3_drawing_tools/xy_points.html">
+            
+                <a href="../3_drawing_tools/xy_points.html">
+            
+                    
+                    XY点位文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../3_drawing_tools/enveloping_profile.html">
+            
+                <a href="../3_drawing_tools/enveloping_profile.html">
+            
+                    
+                    包络蜗杆砂轮截形
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../4_analysis_tools/">
+            
+                <a href="../4_analysis_tools/">
+            
+                    
+                    分析工具与精度检验
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../4_analysis_tools/axial_section.html">
+            
+                <a href="../4_analysis_tools/axial_section.html">
+            
+                    
+                    工件轴向截面计算
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../4_analysis_tools/dxf_compare.html">
+            
+                <a href="../4_analysis_tools/dxf_compare.html">
+            
+                    
+                    DXF 文件对比
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../4_analysis_tools/curve_deviation.html">
+            
+                <a href="../4_analysis_tools/curve_deviation.html">
+            
+                    
+                    曲线误差对比
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../5_parts_library_and_menus/">
+            
+                <a href="../5_parts_library_and_menus/">
+            
+                    
+                    零件库、菜单功能与交互图表
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../5_parts_library_and_menus/parts_library.html">
+            
+                <a href="../5_parts_library_and_menus/parts_library.html">
+            
+                    
+                    零件库管理指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../5_parts_library_and_menus/menus_and_charts.html">
+            
+                <a href="../5_parts_library_and_menus/menus_and_charts.html">
+            
+                    
+                    菜单栏、参数配置与 2D/3D 图表操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../6_workflows_cases/">
+            
+                <a href="../6_workflows_cases/">
+            
+                    
+                    典型工程实战案例
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../6_workflows_cases/case1_heavy_involute.html">
+            
+                <a href="../6_workflows_cases/case1_heavy_involute.html">
+            
+                    
+                    案例一：大压力角渐开线蜗杆全流程加工与检验
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../6_workflows_cases/case2_straight_tooth.html">
+            
+                <a href="../6_workflows_cases/case2_straight_tooth.html">
+            
+                    
+                    案例二：直线齿面零螺旋角蜗杆截形与修整路线
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../6_workflows_cases/case3_standard_involute_crowning.html">
+            
+                <a href="../6_workflows_cases/case3_standard_involute_crowning.html">
+            
+                    
+                    案例三：标准渐开线蜗杆接触斑点主动修形补偿
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../7_troubleshooting/">
+            
+                <a href="../7_troubleshooting/">
+            
+                    
+                    常见提示与故障排除
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            本书使用 HonKit 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >其他参数与 NC 程序输出解读</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="23-其他参数与-nc-程序输出解读">2.3 其他参数与 NC 程序输出解读</h1>
+<h2 id="一、其他参数：程序头信息">一、其他参数：<code>程序头信息</code></h2>
+<p>切换到 <strong><code>磨削参数</code> <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>→</mo></mrow><annotation encoding="application/x-tex">\rightarrow</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.36687em;vertical-align:0em;"></span><span class="mrel">→</span></span></span></span> <code>其他参数</code></strong>，可在文本框中输入任意多行备注（如蜗杆图号、中心距、喉径、齿数、压力角等）。</p>
+<p><img src="resources/ui_other_params.png" alt="其他参数中的程序头信息设置"></img></p>
+<ul>
+<li><strong>自动注释化</strong>：生成程序时，软件会自动在每一行前添加西门子注释符 <code>;</code>，置于 <code>;********头信息*********</code> 区块之下，既方便操作员机台核对，又不影响 CNC 运行。</li>
+</ul>
+<hr></hr>
+<h2 id="二、输出目录结构与文件命名">二、输出目录结构与文件命名</h2>
+<p>点击 <strong><code>生成代码</code></strong> 后，软件在 <strong><code>输出程序路径</code></strong> 下创建 <code>PC_&lt;中心距&gt;</code> 文件夹（4 位小数中的 <code>.</code> 替换为 <code>_</code>）：</p>
+<pre><code class="lang-text">D:\EG_Demo\NC_Output\
+└── PC_116_9210\
+    ├── DIA_450_0000.SPF
+    ├── DIA_452_0000.SPF
+    ├── DIA_454_0000.SPF
+    ├── DIA_456_0000.SPF
+    ├── DIA_458_0000.SPF
+    └── DIA_460_0000.SPF
+</code></pre>
+<ul>
+<li><strong>单文件对应单直径</strong>：文件名 <code>DIA_460_0000</code> 表示该程序针对当前实测直径为 <code>460.0000 mm</code> 的砂轮计算。</li>
+<li><strong>砂轮修整换用原则</strong>：车间每修整减小一定砂轮直径后，直接调用最接近当前直径的 <code>DIA_xxx.SPF</code>（或 <code>.cpf</code>）子程序即可自动补偿包络半径变化。</li>
+<li><strong>西门子加密输出</strong>：若勾选了 <strong><code>Siemens程序加密</code></strong>，同目录内会直接生成 <code>.cpf</code> 加密文件，明文 <code>.SPF</code> 将被自动移除。</li>
+</ul>
+<hr></hr>
+<h2 id="三、真实-spf-程序片段解读（samplec117）">三、真实 <code>.SPF</code> 程序片段解读（<code>Sample_C_117</code>）</h2>
+<p>以下为软件用 <code>Sample_C_117</code> 参数真实生成的 <code>DIA_460_0000.SPF</code> 开头部分：</p>
+<pre><code class="lang-text">;********头信息*********
+;锥面包络蜗杆
+;中心距：116.921
+;喉部直径：38.5
+;蜗轮齿数：60
+;压力角：23.5
+;*****版本及日期*********
+;软件版本:1.19.0
+;生成日期:2026-11-24 09:47:57
+;*****加工参数***********
+;蜗杆类型:       锥面;
+;涡轮分度圆半径: 97.6710mm;
+;涡轮加工角度:   60.0000度;
+;涡轮齿数:       60齿;
+;蜗杆螺旋角度:   3.3930度;
+;蜗杆旋向:       右旋;
+;磨削方向:       从右往左;
+;砂轮直径:       460.0000mm;
+;分度圆齿顶高:   3.0200mm;
+;磨削余量:       1.0mm;
+;磨削尺寸调整:   0.0mm;
+;*****输出数据***********
+;Y轴加工位置:    -2.3176;
+;*****外部全局变量*********
+;FeedLeft     - 剩余磨削量
+;Center_Pos_X - 基准圆心坐标.X
+;Center_Pos_Z - 基准圆心坐标.Z
+;Center_R     - 基准圆圆弧半径
+;Start_Pos_X  - 磨削起点坐标.X
+;Start_Pos_Z  - 磨削起点坐标.Z
+;Start_Pos_B  - 磨削起点角度.B - 绝对坐标
+;Start_Pos_C  - 磨削起点角度.C - 绝对坐标
+;End_Pos_X    - 磨削终点坐标.X
+;End_Pos_Z    - 磨削终点坐标.Z
+;End_Pos_B    - 磨削终点角度.B - 绝对坐标
+;End_Pos_C    - 磨削终点角度.C - 增量角度
+;****************
+DEF REAL currentValue;
+STOPRE;
+currentValue = FeedLeft;
+
+IF (currentValue&gt;=1.00) GOTOF CV_1_00;
+IF (currentValue&lt;1.00) AND (currentValue&gt;=0.90) GOTOF CV_0_90;
+...
+IF (currentValue&lt;0.10) AND (currentValue&gt;=0.00) GOTOF CV_0_00;
+IF (currentValue&lt;0) GOTOF CV_0_00;
+
+CV_1_00:
+;基准圆心坐标
+Center_Pos_X= -298.3590        ;X坐标
+Center_Pos_Z=  -38.8817        ;Z坐标
+Center_R=      300.8818        ;圆弧半径
+;============
+;磨削起点坐标
+Start_Pos_X=  -20.5317        ;X坐标
+Start_Pos_Z= -154.3887        ;Z坐标
+Start_Pos_B=  -30.0000        ;B绝对角度
+Start_Pos_C=  350.0000        ;C绝对角度
+;============
+;磨削终点坐标
+End_Pos_X=  -59.4134          ;X坐标
+End_Pos_Z=  143.9703          ;Z坐标
+End_Pos_B=   30.0000          ;B绝对角度
+End_Pos_C= 3600.0000          ;C轴终端增量角度
+RET
+</code></pre>
+<hr></hr>
+<h2 id="四、外部全局变量速查表">四、外部全局变量速查表</h2>
+<p>机床主程序通过读取 <code>FeedLeft</code> 自动跳入对应 <code>CV_x_xx</code> 标签，并接收以下全局变量完成四轴包络运动：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">变量名</th>
+<th style="text-align:center">坐标/轴向类型</th>
+<th style="text-align:left">物理含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>FeedLeft</code></td>
+<td style="text-align:center">外部传入余量</td>
+<td style="text-align:left">机床当前剩余磨削深度（决定执行哪一段 <code>CV_*</code>）</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>Center_Pos_X</code> / <code>Center_Pos_Z</code></td>
+<td style="text-align:center">圆弧基准中心</td>
+<td style="text-align:left">包络圆弧中心 <code>X</code> / <code>Z</code> 坐标</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>Center_R</code></td>
+<td style="text-align:center">圆弧半径</td>
+<td style="text-align:left">三点拟合的包络基准圆弧半径</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>Start_Pos_X</code> / <code>Start_Pos_Z</code></td>
+<td style="text-align:center">磨削起点线性轴</td>
+<td style="text-align:left">磨削起点 <code>X</code> / <code>Z</code> 坐标</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>Start_Pos_B</code> / <code>Start_Pos_C</code></td>
+<td style="text-align:center">磨削起点旋转轴</td>
+<td style="text-align:left">磨削起点 <code>B</code> 轴、<code>C</code> 轴<strong>绝对角度</strong></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>End_Pos_X</code> / <code>End_Pos_Z</code></td>
+<td style="text-align:center">磨削终点线性轴</td>
+<td style="text-align:left">磨削终点 <code>X</code> / <code>Z</code> 坐标</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>End_Pos_B</code></td>
+<td style="text-align:center">磨削终点摆角</td>
+<td style="text-align:left">磨削终点 <code>B</code> 轴<strong>绝对角度</strong></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>End_Pos_C</code></td>
+<td style="text-align:center">磨削终点转角</td>
+<td style="text-align:left"><code>C</code> 轴相对起点的<strong>增量角度</strong>（例：<code>60</code> 齿扫 <code>60°</code> 时为 <code>±3600.0000°</code>）</td>
+</tr>
+</tbody>
+</table>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="advanced_params.html" class="navigation navigation-prev " aria-label="Previous page: 高级参数（机床基准与对刀）">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../3_drawing_tools/" class="navigation navigation-next " aria-label="Next page: 绘图工具与砂轮截形设计">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"其他参数与 NC 程序输出解读","level":"1.3.3","depth":2,"next":{"title":"绘图工具与砂轮截形设计","level":"1.4","depth":1,"path":"3_drawing_tools/README.md","ref":"3_drawing_tools/README.md","articles":[{"title":"锥面廓形","level":"1.4.1","depth":2,"path":"3_drawing_tools/conical_profile.md","ref":"3_drawing_tools/conical_profile.md","articles":[]},{"title":"XY点位文件","level":"1.4.2","depth":2,"path":"3_drawing_tools/xy_points.md","ref":"3_drawing_tools/xy_points.md","articles":[]},{"title":"包络蜗杆砂轮截形","level":"1.4.3","depth":2,"path":"3_drawing_tools/enveloping_profile.md","ref":"3_drawing_tools/enveloping_profile.md","articles":[]}]},"previous":{"title":"高级参数（机床基准与对刀）","level":"1.3.2","depth":2,"path":"2_grinding_params/advanced_params.md","ref":"2_grinding_params/advanced_params.md","articles":[]},"dir":"ltr"},"config":{"plugins":["theme-default","katex"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css"},"pluginsConfig":{"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"katex":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2}},"theme":"default","author":"XinCore Studio","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"EnveloGrinding User Guide","language":"zh-hans","gitbook":"*","description":"EnveloGrinding 包络蜗杆磨削软件完整用户指南"},"file":{"path":"2_grinding_params/other_and_nc_output.md","mtime":"2026-11-24T03:17:16.179Z","type":"markdown"},"gitbook":{"version":"6.2.6","time":"2026-11-24T03:17:23.770Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/@honkit/honkit-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/@honkit/honkit-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/@honkit/honkit-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
