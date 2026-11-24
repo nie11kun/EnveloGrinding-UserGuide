@@ -11,17 +11,14 @@
 }
 
 :root {
-    /* 定义字体变量 */
     --base-font: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Helvetica Neue", sans-serif;
     --code-font: "JetBrains Mono", Consolas, Monaco, "Courier New", monospace;
 }
 
-/* 全局字体重置 */
 html, body {
     font-family: var(--base-font) !important;
 }
 
-/* 确保 .book 类也使用正确的字体 */
 .book,
 .book-summary,
 .book-body,
@@ -29,14 +26,17 @@ html, body {
     font-family: var(--base-font) !important;
 }
 
-/* markdown 内容区域字体设置 */
+/* markdown 内容区域字体与防溢出设置 */
 .markdown-section {
     font-family: var(--base-font) !important;
     font-size: 16px;
     line-height: 1.8;
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 20px;
+    overflow-x: visible !important;
 }
 
-/* 段落字体设置 */
 .markdown-section p,
 .markdown-section ul,
 .markdown-section ol,
@@ -44,7 +44,6 @@ html, body {
     font-family: var(--base-font) !important;
 }
 
-/* 标题字体设置 */
 .markdown-section h1,
 .markdown-section h2,
 .markdown-section h3,
@@ -55,14 +54,12 @@ html, body {
     font-weight: 600;
 }
 
-/* 代码字体设置 */
 .markdown-section pre,
 .markdown-section code {
     font-family: var(--code-font) !important;
     font-size: 14px;
 }
 
-/* 侧边栏字体设置 */
 .book-summary ul.summary li a,
 .book-summary ul.summary li span {
     font-family: var(--base-font) !important;
@@ -70,7 +67,6 @@ html, body {
     padding: 8px 15px;
 }
 
-/* 全局字体设置 */
 body {
     font-family: var(--base-font);
     -webkit-font-smoothing: antialiased;
@@ -78,29 +74,18 @@ body {
     text-rendering: optimizeLegibility;
 }
 
-/* 内容区域优化 */
-.markdown-section {
-    max-width: 850px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-/* 段落优化 */
 .markdown-section p {
-    margin: 1.2em 0;
-    text-align: justify;
+    margin: 0.95em 0;
     letter-spacing: 0.02em;
     word-break: break-word;
     overflow-wrap: break-word;
 }
 
-/* 标题优化 */
-.markdown-section h1 { font-size: 2em; }
-.markdown-section h2 { font-size: 1.6em; padding-bottom: 0.3em; }
-.markdown-section h3 { font-size: 1.3em; }
-.markdown-section h4 { font-size: 1.15em; }
+.markdown-section h1 { font-size: 2em; border-bottom: 2px solid #eaecef; padding-bottom: 0.3em; }
+.markdown-section h2 { font-size: 1.55em; padding-bottom: 0.3em; border-bottom: 1px solid #eaecef; margin-top: 1.8em; }
+.markdown-section h3 { font-size: 1.28em; margin-top: 1.4em; color: #1f4e79; }
+.markdown-section h4 { font-size: 1.12em; }
 
-/* 代码块优化 */
 .markdown-section pre {
     padding: 1em;
     border-radius: 6px;
@@ -114,24 +99,86 @@ body {
     border-radius: 3px;
 }
 
-/* 侧边栏优化 */
+/* 图片优化：居中、圆角与轻量边框阴影 */
+.markdown-section img {
+    display: block;
+    margin: 1.2em auto;
+    max-width: 96%;
+    border-radius: 6px;
+    border: 1px solid #e4e8ee;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+/* 表格优化与防右缘裁切 */
+.markdown-section table {
+    width: 100%;
+    max-width: 100%;
+    table-layout: auto;
+    border-collapse: collapse;
+    margin: 1.2em 0;
+    font-size: 15px;
+}
+
+.markdown-section table th {
+    background-color: #f3f6fa;
+    font-weight: 600;
+}
+
+.markdown-section table th,
+.markdown-section table td {
+    min-width: 0;
+    vertical-align: top;
+    line-height: 1.65;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
+
+.markdown-section table th code,
+.markdown-section table td code {
+    white-space: normal;
+    word-break: break-all;
+    overflow-wrap: anywhere;
+}
+
+.markdown-section table code:before,
+.markdown-section table code:after {
+    content: none;
+}
+
+/* 引用块优化 */
+.markdown-section blockquote {
+    border-left: 4px solid #2f5d8c;
+    background-color: #f8fafd;
+    padding: 10px 16px;
+    color: #334155;
+    border-radius: 0 6px 6px 0;
+}
+
+.markdown-section blockquote p {
+    margin: 0.4em 0;
+}
+
 .book-summary {
     border-right: 1px solid;
 }
 
-/* 列表优化 */
 .markdown-section ul,
 .markdown-section ol {
     padding-left: 2em;
-    margin: 1em 0;
+    margin: 0.9em 0;
+}
+
+.markdown-section ul ul,
+.markdown-section ol ul,
+.markdown-section ul ol {
+    margin: 0.3em 0 0.45em 0;
 }
 
 .markdown-section ul li,
 .markdown-section ol li {
-    margin-bottom: 0.5em;
+    margin-bottom: 0.45em;
 }
 
-/* 响应式优化 */
 @media screen and (max-width: 768px) {
     .markdown-section {
         padding: 15px;
@@ -145,7 +192,6 @@ body {
     }
 }
 
-/* 打印优化 */
 @media print {
     .markdown-section {
         font-size: 12pt;

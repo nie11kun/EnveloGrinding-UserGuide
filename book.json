@@ -1,10 +1,11 @@
 {
     "title": "EnveloGrinding User Guide",
-    "author": "Nie Kun",
-    "description": "EnveloGrinding 软件完整用户指南",
+    "author": "XinCore Studio",
+    "description": "EnveloGrinding 包络蜗杆磨削软件完整用户指南",
     "language": "zh-hans",
     "plugins": [
-        "theme-default"
+        "theme-default",
+        "katex"
     ],
     "pluginsConfig": {
         "theme-default": {
